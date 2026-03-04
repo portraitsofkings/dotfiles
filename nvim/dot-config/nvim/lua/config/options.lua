@@ -34,6 +34,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- ####################
+-- 10 messages and info
+
+vim.opt.confirm = true
+
+-- ####################
 -- 11 selecting text
 
 vim.opt.clipboard = "unnamedplus"
