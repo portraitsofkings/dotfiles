@@ -1,0 +1,9 @@
+[user]
+    name = kings
+    email = 161228236+portraitsofkings@users.noreply.github.com
+[init]
+    defaultBranch = main
+[core]
+    editor = nvim
+
+# vim:ft=gitconfig
