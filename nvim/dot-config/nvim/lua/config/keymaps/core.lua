@@ -1,7 +1,7 @@
 return {
     {
         lhs = '-',
-        rhs = '<cmd>Ex<cr>',
+        rhs = '<cmd>Oil<cr>',
         mode = 'n',
         opts = {
             desc = 'Explore'
