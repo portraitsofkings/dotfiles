@@ -1,0 +1,18 @@
+# ~~~ Options ~~~
+
+# Use Emacs keymap
+bindkey -e
+
+# ~~~ History ~~~
+
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+
+# ~~~ Completion ~~~
+
+zstyle :compinstall filename '/home/kings/.zshrc'
+
+autoload -Uz compinit
+compinit
+
