@@ -1,4 +1,3 @@
-# Usage
+# Installation
 
-## Install
-`git clone git@github.com:portraitsofkings/dotfiles ~/.dotfiles && ~/.dotfiles/install.sh`
+`git clone git@github.com:portraitsofkings/dotfiles ~/.dotfiles && bash ~/.dotfiles/install.sh`
