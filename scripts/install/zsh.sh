@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-# Quit on errors
+# Quit immediately on any error
 set -e
 
 NAME="zsh"
-
-if [ ! -v NAME ]; then
-  echo "[Installer] ERROR: Package name not specified" >&2
-  exit 1
-fi
   
+RESET='\e[0m'
+RED='\e[0;31m'
 BLUE='\e[0;34m'
-RESET='\e[0m'  # No color
 
 if command -v $NAME > /dev/null; then
     echo -e "${BLUE}$NAME already installed${RESET}"
@@ -20,7 +16,17 @@ fi
 
 echo -e "${BLUE}Installing $NAME...${RESET}"
 
-if uname -o | grep -i "android" > /dev/null && command -v pkg > /dev/null; then
-    pkg install $NAME -y
-    exit 0
-fi
+case "$INSTALLER" in
+    "dnf")
+        sudo dnf install $NAME -y
+        exit 0
+    ;;
+    "pkg")
+        pkg install $NAME -y
+        exit 0
+    ;;
+esac
+
+echo -e "${RED}[ERROR] No supported installer found${RESET}"
+exit 1
+
