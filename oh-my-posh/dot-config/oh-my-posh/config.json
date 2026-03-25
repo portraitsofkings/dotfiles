@@ -1,0 +1,59 @@
+{
+    "version": 4,
+    "var": {
+        "Prompt": " ",
+        "Prompt_foreground": "blue"
+    },
+    "palette": {
+        "main": "blue",
+        "error": "red"
+    },
+    "secondary_prompt": {
+        "background": "transparent",
+        "foreground": "p:main",
+        "template": "{{.Var.Prompt}}"
+    },
+    "transient_prompt": {
+        "background": "transparent",
+        "foreground": "p:main",
+        "template": "{{.Var.Prompt}}"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "foreground": "blue",
+                    "options": {
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "p:main",
+                    "foreground_templates": [
+                        "{{if gt .Code 0}}red{{end}}"
+                    ],
+                    "template": "{{.Var.Prompt}}"
+                }
+            ]
+        },
+        {
+            "type": "rprompt",
+            "overflow": "hide",
+            "segments": [
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "options": {
+                        "branch_icon": "󰘬 "
+                    }
+                }
+            ]
+        }
+    ]
+}
