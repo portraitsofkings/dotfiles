@@ -63,7 +63,7 @@ zinit load zsh-users/zsh-syntax-highlighting
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
 # Only start the prompt if oh-my-posh is installed and config exists
-if [[ -f "$HOME/.local/bin/oh-my-posh" && -f "${XDG_CONFIG_HOME}/oh-my-posh/config.json" ]]; then
+if [[ -n "$(which oh-my-posh)" && -f "${XDG_CONFIG_HOME}/oh-my-posh/config.json" ]]; then
     eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME}/oh-my-posh/config.json)"
 fi
 
