@@ -34,7 +34,7 @@ if [ -n "$ZSHDIR" ]; then
   chsh -s $ZSHDIR
 fi
 
-echo -e "${MAGENTA}We're done!${RESET}"
+echo -e "${MAGENTA}Done!${RESET}"
 
 # Jump right into zsh
 exec zsh
