@@ -1,11 +1,14 @@
-XDG_CONFIG_HOME="$HOME/.config"
+# ~~~~~~~~~~ Environment ~~~~~~~~~~
 
-# Use NeoVim as man pager
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Use nvim as man pager
 export MANPAGER="nvim +Man!"
-# Options 
 
-# Use Emacs keymap
-bindkey -e
+# ~~~~~~~~~~ Keybinds ~~~~~~~~~~
+
+bindkey -e # Emacs keymap
+
 bindkey ' ' magic-space
 
 # ^L clears the screen, and the scrollback buffer
@@ -17,20 +20,24 @@ function clear-scrollback-buffer {
 zle -N clear-scrollback-buffer
 bindkey '^L' clear-scrollback-buffer
 
-# History 
+# ~~~~~~~~~~ History ~~~~~~~~~~
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# Aliases
+# ~~~~~~~~~~ Aliases ~~~~~~~~~~
+
 alias la="ls -a"
-# Completion 
+
+# ~~~~~~~~~~ Completion ~~~~~~~~~~
 
 zstyle :compinstall filename '/home/kings/.zshrc'
 
 autoload -Uz compinit
 compinit
+
+# ~~~~~~~~~~ Plugin Manager ~~~~~~~~~~
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -55,12 +62,17 @@ autoload -Uz _zinit
 
 ### End of Zinit's installer chunk
 
+# ~~~~~~~~~~ Plugins ~~~~~~~~~~
 
 zinit load zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-syntax-highlighting
 
+# ~~~~~~~~~~ Plugin Configuration ~~~~~~~~~~
+
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
+
+# ~~~~~~~~~~ Prompt ~~~~~~~~~~
 
 # Only start the prompt if oh-my-posh is installed and config exists
 if [[ -n "$(which oh-my-posh)" && -f "${XDG_CONFIG_HOME}/oh-my-posh/config.json" ]]; then
