@@ -7,9 +7,13 @@ export MANPAGER="nvim +Man!"
 
 # ~~~~~~~~~~ Keybinds ~~~~~~~~~~
 
-bindkey -e # Emacs keymap
+bindkey -e # Emacs defaults
 
 bindkey ' ' magic-space
+
+# Better searching
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # ^L clears the screen, and the scrollback buffer
 # https://unix.stackexchange.com/a/531178
@@ -25,6 +29,10 @@ bindkey '^L' clear-scrollback-buffer
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_ALL_DUPS
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # ~~~~~~~~~~ Aliases ~~~~~~~~~~
 
