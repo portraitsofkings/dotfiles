@@ -11,8 +11,11 @@ vim.opt.expandtab = true
 
 -- ~~~~~~~~~~ Visuals ~~~~~~~~~~ 
 
--- Keep this many lines visible around cursor
-vim.opt.scrolloff = 100
+-- Keep this many lines visible around cursor vertically
+vim.opt.scrolloff = 50
+
+-- Keep this many lines visible around cursor horizontally
+vim.opt.sidescrolloff = 10
 
 -- Text wrapping to next line
 vim.opt.wrap = false
