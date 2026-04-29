@@ -27,6 +27,9 @@ vim.opt.relativenumber = true
 -- Enable 24-bit RGB color support for TUI
 vim.opt.termguicolors = true
 
+-- Show a global status line (no per-window lines)
+vim.opt.laststatus = 3
+
 -- ~~~~~~~~~~ Searching ~~~~~~~~~~ 
 
 -- Ignore case when searching
