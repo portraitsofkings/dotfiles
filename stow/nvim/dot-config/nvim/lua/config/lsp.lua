@@ -12,3 +12,4 @@ vim.lsp.config("lua_ls", {
 
 -- Enable lua_ls LSP config provided by nvim-lspconfig
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('emmet_language_server')
