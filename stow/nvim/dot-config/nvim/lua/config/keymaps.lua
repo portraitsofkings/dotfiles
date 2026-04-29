@@ -8,3 +8,4 @@ local function applyKeymaps(maps)
 end
 
 applyKeymaps(require('config.keymaps.core'))
+applyKeymaps(require('config.keymaps.telescope'))
