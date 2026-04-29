@@ -172,7 +172,58 @@ return {
     -- this means that the statusline is cut here when there's not enough space
     { provider = '%<'}
   )
+  local Git = {
+    condition = conditions.is_git_repo,
 
+    init = function(self)
+      self.status_dict = vim.b.gitsigns_status_dict
+      self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
+    end,
+
+    hl = { fg = "orange" },
+
+
+    {   -- git branch name
+      provider = function(self)
+        return "  " .. self.status_dict.head
+      end,
+      hl = { bold = true }
+    },
+    -- You could handle delimiters, icons and counts similar to Diagnostics
+    {
+      condition = function(self)
+        return self.has_changes
+      end,
+      provider = "("
+    },
+    {
+      provider = function(self)
+        local count = self.status_dict.added or 0
+        return count > 0 and ("+" .. count)
+      end,
+      hl = { fg = "git_add" },
+    },
+    {
+      provider = function(self)
+        local count = self.status_dict.removed or 0
+        return count > 0 and ("-" .. count)
+      end,
+      hl = { fg = "git_del" },
+    },
+    {
+      provider = function(self)
+        local count = self.status_dict.changed or 0
+        return count > 0 and ("~" .. count)
+      end,
+      hl = { fg = "git_change" },
+    },
+    {
+      condition = function(self)
+        return self.has_changes
+      end,
+      provider = ")",
+    },
+  }
   local Diagnostics = {
     condition = conditions.has_diagnostics,
     static = {
@@ -194,30 +245,45 @@ return {
     {
       provider = function(self)
         -- 0 is just another output, we can decide to print it or not!
-        return self.errors > 0 and (self.error_icon .. self.errors .. " ")
+        return self.errors > 0 and (self.error_icon .. self.errors)
       end,
       hl = { fg = "error" },
     },
     {
+      provider = " ",
+      condition = function(self)
+        return self.warnings > 0 or self.info > 0 or self.hints > 0
+      end
+    },
+    {
       provider = function(self)
-        return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
+        return self.warnings > 0 and (self.warn_icon .. self.warnings)
       end,
       hl = { fg = "warning" },
     },
     {
+      provider = " ",
+      condition = function(self)
+        return self.info > 0 or self.hints > 0
+      end
+    },
+    {
       provider = function(self)
-        return self.info > 0 and (self.info_icon .. self.info .. " ")
+        return self.info > 0 and (self.info_icon .. self.info)
       end,
       hl = { fg = "info" },
+    },
+    {
+      provider = " ",
+      condition = function(self)
+        return self.hints > 0
+      end
     },
     {
       provider = function(self)
         return self.hints > 0 and (self.hint_icon .. self.hints)
       end,
       hl = { fg = "hint" },
-    },
-    {
-      provider = " ",
     },
   }
 
@@ -229,12 +295,52 @@ return {
     provider = " %(%l/%L%):%-3c %P",
   }
 
+  local LspProgress = {
+    {
+      provider = " "
+    },
+    {
+      provider = function()
+        return require('lsp-progress').progress()
+      end,
+      update = {
+        'User',
+        pattern = 'LspProgressStatusUpdated',
+        callback = vim.schedule_wrap(function()
+          vim.cmd('redrawstatus')
+        end),
+      }
+    }
+  }
+
   -- load color aliases from the theme
-  local colors = require("tokyonight.colors").setup()
+  local theme_colors = require("tokyonight.colors").setup()
+  local preset_colors = {
+    bright_bg = utils.get_highlight("Folded").bg,
+    bright_fg = utils.get_highlight("Folded").fg,
+    red = utils.get_highlight("DiagnosticError").fg,
+    dark_red = utils.get_highlight("DiffDelete").bg,
+    green = utils.get_highlight("String").fg,
+    blue = utils.get_highlight("Function").fg,
+    gray = utils.get_highlight("NonText").fg,
+    orange = utils.get_highlight("Constant").fg,
+    purple = utils.get_highlight("Statement").fg,
+    cyan = utils.get_highlight("Special").fg,
+    diag_warn = utils.get_highlight("DiagnosticWarn").fg,
+    diag_error = utils.get_highlight("DiagnosticError").fg,
+    diag_hint = utils.get_highlight("DiagnosticHint").fg,
+    diag_info = utils.get_highlight("DiagnosticInfo").fg,
+    git_del = utils.get_highlight("GitSignsDelete").fg,
+    git_add = utils.get_highlight("GitSignsAdd").fg,
+    git_change = utils.get_highlight("GitSignsChange").fg,
+  }
+
+  local colors = vim.tbl_deep_extend('keep', theme_colors, preset_colors)
+
   require('heirline').load_colors(colors)
 
   -- assemble the final statusline
-  local statusline = { ModeText, FileNameBlock, Diagnostics, { provider = '%=' }, Ruler }
+  local statusline = { ModeText, FileNameBlock, Git, Diagnostics, LspProgress, { provider = '%=' }, Ruler }
   require('heirline').setup({ statusline = statusline })
 end
 }
