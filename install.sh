@@ -18,28 +18,28 @@ STOWDIR="${DOTFILES}/stow"
 
 # dnf
 if command -v dnf &>/dev/null; then
-    export INSTALLER="dnf"
+  export INSTALLER="dnf"
 fi
 
 # pkg (Android Termux)
 if uname -o | grep -i "android" > /dev/null && command -v pkg > /dev/null; then
-    export INSTALLER="pkg"
+  export INSTALLER="pkg"
 fi
 
 # Don't prompt for password in termux 
 if [ "$INSTALLER" != "pkg" ]; then
-    # Update sudo cache immediately
-    sudo -v
+  # Update sudo cache immediately
+  sudo -v
 fi
 
 echo -e "${MAGENTA}Running install scripts...${RESET}"
 
 if [ "$INSTALLER" ]; then
-    for script in $INSTALLDIR/*; do
-        bash "$script"
-    done
+  for script in $INSTALLDIR/*; do
+    bash "$script"
+  done
 else
-    echo "No supported installer found, skipping..."
+  echo "No supported installer found, skipping..."
 fi
 
 unset INSTALLER
@@ -50,7 +50,7 @@ echo -e "${MAGENTA}Installing stow packages...${RESET}"
 pushd $STOWDIR &>/dev/null
 for package in */; do
   echo -e "${BLUE}Installing $(basename $package) stow package...${RESET}"
-    stow --dotfiles -t $HOME -R $package
+  stow --dotfiles -t $HOME -R $package
 done
 popd &>/dev/null
 
@@ -59,10 +59,11 @@ popd &>/dev/null
 echo -e "${MAGENTA}Changing shell to zsh...${RESET}"
 ZSHDIR="$(which zsh)"
 if [ -n "$ZSHDIR" ]; then
-  chsh -s $ZSHDIR
+  sudo chsh -s $ZSHDIR $USER
 fi
 
 echo -e "${MAGENTA}Done!${RESET}"
 
 # Jump right into zsh
+echo -e "${MAGENTA}Switching to zsh...${RESET}"
 exec zsh
