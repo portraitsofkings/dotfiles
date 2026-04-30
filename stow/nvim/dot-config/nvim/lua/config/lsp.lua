@@ -10,6 +10,18 @@ vim.lsp.config("lua_ls", {
   },
 })
 
--- Enable lua_ls LSP config provided by nvim-lspconfig
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+vim.lsp.config('cssls', {
+  capabilities = capabilities,
+})
+
+vim.lsp.config('html', {
+  capabilities = capabilities,
+})
+
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('emmet_language_server')
+vim.lsp.enable('html')
+vim.lsp.enable('cssls')
