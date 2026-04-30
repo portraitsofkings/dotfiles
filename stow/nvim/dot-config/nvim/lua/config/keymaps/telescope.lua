@@ -32,7 +32,7 @@ return {
         }
     },
     {
-        lhs = '<leader>en',
+        lhs = '<leader>fn',
         rhs = function()
             require('telescope.builtin').find_files({
                 cwd = vim.fn.stdpath('config')
@@ -40,7 +40,7 @@ return {
         end,
         mode = 'n',
         opts = {
-          desc = 'Edit Neovim Config'
+          desc = 'Fuzzy Find Neovim Directory'
         }
     }
 
