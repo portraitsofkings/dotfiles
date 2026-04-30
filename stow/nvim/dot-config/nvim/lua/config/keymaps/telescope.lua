@@ -4,7 +4,7 @@ return {
         rhs = '<cmd>Telescope find_files<cr>',
         mode = 'n',
         opts = {
-          desc = 'Telescope Find Files'
+          desc = 'Telescope: Find Files'
         }
     },
     {
@@ -12,7 +12,7 @@ return {
         rhs = '<cmd>Telescope live_grep<cr>',
         mode = 'n',
         opts = {
-          desc = 'Telescope Live Grep'
+          desc = 'Telescope: Live Grep'
         }
     },
     {
@@ -20,7 +20,7 @@ return {
         rhs = '<cmd>Telescope help_tags<cr>',
         mode = 'n',
         opts = {
-          desc = 'Telescope Find Help'
+          desc = 'Telescope: Find Help'
         }
     },
     {
@@ -28,7 +28,7 @@ return {
         rhs = '<cmd>Telescope buffers<cr>',
         mode = 'n',
         opts = {
-          desc = 'Telescope Find Buffers'
+          desc = 'Telescope: Find Buffers'
         }
     },
     {

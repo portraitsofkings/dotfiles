@@ -4,7 +4,47 @@ return {
     rhs = '<cmd>Oil<cr>',
     mode = 'n',
     opts = {
-      desc = 'Explore'
+      desc = 'Core: Explore'
+    }
+  },
+  {
+    lhs = '<leader>w',
+    rhs = '<cmd>w<cr>',
+    mode = 'n',
+    opts = {
+      desc = 'Core: Write File'
+    }
+  },
+  {
+    lhs = '<leader>x',
+    rhs = '<cmd>x<cr>',
+    mode = 'n',
+    opts = {
+      desc = 'Core: Write and Quit'
+    }
+  },
+  {
+    lhs = '<leader>?',
+    rhs = '<cmd>Telescope keymaps<cr>',
+    mode = 'n',
+    opts = {
+      desc = 'Core: Browse Keymaps'
+    }
+  },
+  {
+    lhs = '<leader>q',
+    rhs = '<cmd>q<cr>',
+    mode = 'n',
+    opts = {
+      desc = 'Core: Quit'
+    }
+  },
+  {
+    lhs = '<leader>qa',
+    rhs = '<cmd>qa<cr>',
+    mode = 'n',
+    opts = {
+      desc = 'Core: Quit All'
     }
   },
   {
@@ -12,7 +52,7 @@ return {
     rhs = '<cmd>nohlsearch<cr>',
     mode = 'n',
     opts = {
-      desc = 'Stop search highlighting'
+      desc = 'Core: Stop Search Highlighting'
     }
   },
   {
@@ -22,7 +62,7 @@ return {
     end,
     mode = 'n',
     opts = {
-      desc = 'Open Neovim Directory'
+      desc = 'Core: Open Neovim Directory'
     }
   }
 }
