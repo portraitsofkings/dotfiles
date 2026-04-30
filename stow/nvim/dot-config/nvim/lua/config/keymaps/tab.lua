@@ -1,7 +1,7 @@
 return {
   {
     lhs = '<leader>th',
-    rhs = '<cmd>-tabn<cr>',
+    rhs = '<cmd>tabp<cr>',
     mode = 'n',
     opts = {
       desc = 'Tab: Previous'
@@ -9,7 +9,7 @@ return {
   },
   {
     lhs = '<leader>tl',
-    rhs = '<cmd>+tabn<cr>',
+    rhs = '<cmd>tabn<cr>',
     mode = 'n',
     opts = {
       desc = 'Tab: Next'
