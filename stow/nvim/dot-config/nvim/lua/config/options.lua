@@ -30,6 +30,10 @@ vim.opt.termguicolors = true
 -- Show a global status line (no per-window lines)
 vim.opt.laststatus = 3
 
+-- Show dots instead of spaces
+vim.opt.list = true
+vim.opt.listchars:append({ space = '·' })
+
 -- ~~~~~~~~~~ Searching ~~~~~~~~~~ 
 
 -- Ignore case when searching
