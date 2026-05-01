@@ -48,10 +48,13 @@ dotfiles-sync () {
 
 # ~~~~~~~~~~ Completion ~~~~~~~~~~
 
+# start completion
+autoload -Uz compinit compinit
 zstyle :compinstall filename '/home/kings/.zshrc'
+# lowercase letters match uppercase letters
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-autoload -Uz compinit
-compinit
+
 
 # ~~~~~~~~~~ Plugin Manager ~~~~~~~~~~
 
