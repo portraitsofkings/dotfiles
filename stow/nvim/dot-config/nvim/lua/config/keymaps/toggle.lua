@@ -47,13 +47,7 @@ return {
   },
   {
     lhs = '<leader>oi',
-    rhs = function()
-      if vim.diagnostic.is_enabled() then
-        vim.diagnostic.enable(true)
-      else
-        vim.diagnostic.enable(false)
-      end
-    end,
+    rhs = '<cmd>IBLToggle<cr>',
     mode = 'n',
     opts = {
       desc = 'Toggle: Indent Guides'
