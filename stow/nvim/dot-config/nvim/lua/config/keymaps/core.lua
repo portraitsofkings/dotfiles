@@ -17,10 +17,18 @@ return {
   },
   {
     lhs = '<Esc>',
-    rhs = '<cmd>nohlsearch<cr>',
+    rhs = function()
+      if vim.v.hlsearch == 1 then
+        vim.cmd('nohlsearch')
+      end
+
+      if vim.snippet.active() then
+        vim.snippet.stop()
+      end
+    end,
     mode = 'n',
     opts = {
-      desc = 'Core: Stop Search Highlighting'
+      desc = 'Core: Stop Search Highlighting and Snippets'
     }
   },
   {
