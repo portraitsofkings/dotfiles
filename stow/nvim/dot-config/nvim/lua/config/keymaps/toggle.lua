@@ -32,14 +32,6 @@ return {
     }
   },
   {
-    lhs = '<leader>oh',
-    rhs = '<cmd>se hlsearch!<cr>',
-    mode = 'n',
-    opts = {
-      desc = 'Toggle: Search Highlight'
-    }
-  },
-  {
     lhs = '<leader>od',
     rhs = function()
       if vim.diagnostic.is_enabled() then
