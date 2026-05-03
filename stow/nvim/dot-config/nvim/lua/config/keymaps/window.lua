@@ -103,4 +103,12 @@ return {
       desc = 'Window: Close'
     }
   },
+  {
+    lhs = '<leader>wt',
+    rhs = '<C-w>T',
+    mode = 'n',
+    opts = {
+      desc = 'Window: Move to a New Tab'
+    }
+  },
 }
