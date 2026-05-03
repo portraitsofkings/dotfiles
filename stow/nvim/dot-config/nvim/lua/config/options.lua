@@ -9,6 +9,9 @@ vim.opt.shiftwidth = 2
 -- Replace typed <Tab> with spaces
 vim.opt.expandtab = true
 
+-- Keep line indent when line wraps
+vim.opt.breakindent = true
+
 -- ~~~~~~~~~~ Visuals ~~~~~~~~~~ 
 
 -- Keep this many lines visible around cursor vertically
@@ -44,6 +47,9 @@ vim.opt.showmode = false
 
 -- Ignore case when searching
 vim.opt.ignorecase = true
+
+-- Override ignorecase when search pattern contains uppercase characters
+vim.opt.smartcase = true
 
 -- ~~~~~~~~~~ Other ~~~~~~~~~~ 
 
