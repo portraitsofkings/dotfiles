@@ -37,6 +37,9 @@ vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars:append({ space = '·' })
 
+-- Hide current mode in cmdline
+vim.opt.showmode = false
+
 -- ~~~~~~~~~~ Searching ~~~~~~~~~~ 
 
 -- Ignore case when searching

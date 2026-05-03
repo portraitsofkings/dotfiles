@@ -5,6 +5,9 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    messages = {
+      enabled = false,
+    },
     lsp = {
       progress = {
         enabled = false,
