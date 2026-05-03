@@ -9,7 +9,8 @@ return {
     },
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 0 },
-      list = { selection = { preselect = true, auto_insert = true } }
+      list = { selection = { preselect = true, auto_insert = true } },
+      ghost_text = { enabled = true },
     },
     sources = {
       default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
@@ -26,6 +27,7 @@ return {
     cmdline = {
       completion = {
         list = { selection = { preselect = true, auto_insert = true } },
+        ghost_text = { enabled = true },
       }
     },
   },
