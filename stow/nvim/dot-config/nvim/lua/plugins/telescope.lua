@@ -5,5 +5,4 @@ return {
     -- optional but recommended
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
-  -- keys = require('config.keymaps.plugins.telescope')
 }

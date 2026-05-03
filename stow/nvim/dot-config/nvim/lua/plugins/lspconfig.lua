@@ -1,3 +1,1 @@
-return {
-  'https://github.com/neovim/nvim-lspconfig',
-}
+return { 'https://github.com/neovim/nvim-lspconfig', }
