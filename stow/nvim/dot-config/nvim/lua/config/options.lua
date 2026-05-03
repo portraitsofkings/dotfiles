@@ -20,6 +20,9 @@ vim.opt.sidescrolloff = 10
 -- Text wrapping to next line
 vim.opt.wrap = false
 
+-- Break lines at word boundary (when wrap is on)
+vim.opt.linebreak = true
+
 -- Show line numbers and relative position
 vim.opt.number = true
 vim.opt.relativenumber = true
