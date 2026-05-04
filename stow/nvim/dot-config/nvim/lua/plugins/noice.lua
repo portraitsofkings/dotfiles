@@ -13,5 +13,12 @@ return {
         enabled = false,
       },
     },
+    cmdline = {
+      format = {
+        input = {
+          view = "cmdline"
+        },
+      },
+    },
   },
 }
