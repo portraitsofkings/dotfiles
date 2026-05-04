@@ -1,34 +1,34 @@
 return {
   {
-    lhs = '<C-h>',
-    rhs = '<C-w>h',
+    lhs = '<leader>wH',
+    rhs = '<C-w>H',
     mode = 'n',
     opts = {
-      desc = 'Window: Go Left'
+      desc = 'Window: Move to the Far Left'
     }
   },
   {
-    lhs = '<C-l>',
-    rhs = '<C-w>l',
+    lhs = '<leader>wL',
+    rhs = '<C-w>L',
     mode = 'n',
     opts = {
-      desc = 'Window: Go Right'
+      desc = 'Window: Move to the Far Right'
     }
   },
   {
-    lhs = '<C-k>',
-    rhs = '<C-w>k',
+    lhs = '<leader>wK',
+    rhs = '<C-w>K',
     mode = 'n',
     opts = {
-      desc = 'Window: Go Up'
+      desc = 'Window: Move to the Top'
     }
   },
   {
-    lhs = '<C-j>',
-    rhs = '<C-w>j',
+    lhs = '<leader>wJ',
+    rhs = '<C-w>J',
     mode = 'n',
     opts = {
-      desc = 'Window: Go Down'
+      desc = 'Window: Move to the Bottom'
     }
   },
   {
@@ -73,7 +73,7 @@ return {
   },
   {
     lhs = '<leader>ws',
-    rhs = '<cmd>split<cr>',
+    rhs = '<C-w>s',
     mode = 'n',
     opts = {
       desc = 'Window: Horizontal Split'
@@ -81,15 +81,23 @@ return {
   },
   {
     lhs = '<leader>wv',
-    rhs = '<cmd>vertical split<cr>',
+    rhs = '<C-w>v',
     mode = 'n',
     opts = {
       desc = 'Window: Vertical Split'
     }
   },
   {
+    lhs = '<leader>wn',
+    rhs = '<cmd>vnew<cr>',
+    mode = 'n',
+    opts = {
+      desc = 'Window: New'
+    }
+  },
+  {
     lhs = '<leader>wo',
-    rhs = '<cmd>only<cr>',
+    rhs = '<C-w>o',
     mode = 'n',
     opts = {
       desc = 'Window: Only'
@@ -97,10 +105,18 @@ return {
   },
   {
     lhs = '<leader>wc',
-    rhs = '<cmd>close<cr>',
+    rhs = '<C-w>c',
     mode = 'n',
     opts = {
       desc = 'Window: Close'
+    }
+  },
+  {
+    lhs = '<leader>wq',
+    rhs = '<C-w>q',
+    mode = 'n',
+    opts = {
+      desc = 'Window: Quit'
     }
   },
   {
