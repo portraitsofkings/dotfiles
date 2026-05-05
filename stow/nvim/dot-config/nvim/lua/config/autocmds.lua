@@ -14,3 +14,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.colorcolumn = "50,72"
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  desc = 'Stop comment auto-insertion in css',
+  pattern = "css",
+  group = vim.api.nvim_create_augroup('css-comments-tweak', { clear = true }),
+  callback = function()
+    -- Remove middle part of comments to fix universal selector
+    vim.opt_local.comments:remove('mb:*')
+  end,
+})
