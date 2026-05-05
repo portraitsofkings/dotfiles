@@ -14,6 +14,7 @@ return {
       ["<leader>eh"] = { "actions.toggle_hidden", mode = "n", opts = { desc = "Explore: Toggle Hidden" } },
       ["<leader>eo"] = { "actions.change_sort", mode = "n" , opts = { desc = "Explore: Change Sort Order" } },
       ["<leader>ep"] = { "actions.preview", opts = { desc = "Explore: Toggle Preview" } },
+      ["<leader>ex"] = { "actions.open_external", opts = { desc = "Explore: Open in External Program" } },
     }
   },
   dependencies = { { "nvim-mini/mini.icons", opts = {} } },
