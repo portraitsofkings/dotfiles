@@ -37,7 +37,7 @@ return {
   {
     provider = function(self)
       if self.info == 0 then return end
-      local has_next = self.info > 0 or self.hints > 0
+      local has_next = self.hints > 0
       return self.info_icon .. self.info .. (has_next and " " or "")
     end,
     hl = { fg = "info" },
