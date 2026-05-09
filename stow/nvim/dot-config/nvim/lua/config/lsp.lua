@@ -21,7 +21,16 @@ vim.lsp.config('html', {
   capabilities = capabilities,
 })
 
+vim.lsp.config('ts_ls', {
+  settings = {
+    implicitProjectConfiguration = {
+      checkJs = true,
+    },
+  },
+})
+
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('emmet_language_server')
 vim.lsp.enable('html')
 vim.lsp.enable('cssls')
+vim.lsp.enable('ts_ls')
