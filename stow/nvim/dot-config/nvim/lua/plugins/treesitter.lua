@@ -9,5 +9,12 @@ return {
     auto_install = true,
     highlight = { enable = true },
     incremental_selection = { enable = true },
+    indent = {
+      enable = true,
+      disable = {
+        -- It's incorrect in html
+        "html"
+      },
+    },
   },
 }
