@@ -25,6 +25,7 @@ vim.lsp.config('ts_ls', {
   settings = {
     implicitProjectConfiguration = {
       checkJs = true,
+      target = 'esnext',
     },
   },
 })
