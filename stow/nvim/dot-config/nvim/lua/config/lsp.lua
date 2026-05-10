@@ -29,8 +29,4 @@ vim.lsp.config('ts_ls', {
   },
 })
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('emmet_language_server')
-vim.lsp.enable('html')
-vim.lsp.enable('cssls')
-vim.lsp.enable('ts_ls')
+-- mason-lspconfig automatically enabled LSPs
