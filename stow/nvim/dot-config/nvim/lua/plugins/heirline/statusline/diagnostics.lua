@@ -1,7 +1,11 @@
 local conditions = require('heirline.conditions')
 
 return {
-  condition = conditions.has_diagnostics,
+  condition = function()
+    local hasDiagnostics = conditions.has_diagnostics()
+    local isInserting = vim.api.nvim_get_mode().mode:match('^i')
+    return not isInserting and hasDiagnostics
+  end,
   static = {
     error_icon = vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.ERROR],
     warn_icon = vim.diagnostic.config()['signs']['text'][vim.diagnostic.severity.WARN],
