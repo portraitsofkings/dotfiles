@@ -27,6 +27,13 @@ vim.lsp.config('ts_ls', {
       checkJs = true,
       target = 'esnext',
     },
+    diagnostics = {
+      -- List of codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
+      ignoredCodes = {
+      -- File is a CommonJS module; it may be converted to an ES module.
+        80001
+      },
+    },
   },
 })
 
