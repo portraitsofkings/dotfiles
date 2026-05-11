@@ -13,13 +13,10 @@ vim.lsp.config("lua_ls", {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-vim.lsp.config('cssls', {
-  capabilities = capabilities,
-})
-
-vim.lsp.config('html', {
-  capabilities = capabilities,
-})
+-- Add snippet support for these LSPs
+vim.lsp.config('cssls', { capabilities = capabilities })
+vim.lsp.config('html', { capabilities = capabilities })
+vim.lsp.config('jsonls', { capabilities = capabilities })
 
 vim.lsp.config('ts_ls', {
   settings = {
@@ -37,4 +34,4 @@ vim.lsp.config('ts_ls', {
   },
 })
 
--- mason-lspconfig automatically enabled LSPs
+-- mason-lspconfig automatically enables LSPs
