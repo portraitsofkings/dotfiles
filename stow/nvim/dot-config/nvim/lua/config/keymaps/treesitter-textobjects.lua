@@ -6,7 +6,7 @@ return {
     end,
     mode = {'x', 'o'},
     opts = {
-      desc = 'Treesitter Textobjects: Select Outer Function'
+      desc = 'Treesitter Textobjects: Outer Function'
     }
   },
   {
@@ -16,27 +16,7 @@ return {
     end,
     mode = {'x', 'o'},
     opts = {
-      desc = 'Treesitter Textobjects: Select Inner Function'
-    }
-  },
-  {
-    lhs = 'ir',
-    rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@parameter.inner', "textobjects")
-    end,
-    mode = {'x', 'o'},
-    opts = {
-      desc = 'Treesitter Textobjects: Select Inner Parameter'
-    }
-  },
-  {
-    lhs = 'ar',
-    rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@parameter.outer', "textobjects")
-    end,
-    mode = {'x', 'o'},
-    opts = {
-      desc = 'Treesitter Textobjects: Select Outer Parameter'
+      desc = 'Treesitter Textobjects: Inner Function'
     }
   },
   {
@@ -46,7 +26,7 @@ return {
     end,
     mode = {'x', 'o'},
     opts = {
-      desc = 'Treesitter Textobjects: Select Outer Comment'
+      desc = 'Treesitter Textobjects: Outer Comment'
     }
   },
   {
@@ -56,27 +36,27 @@ return {
     end,
     mode = {'x', 'o'},
     opts = {
-      desc = 'Treesitter Textobjects: Select Inner Comment'
+      desc = 'Treesitter Textobjects: Inner Comment'
     }
   },
   {
-    lhs = 'ia',
+    lhs = 'ir',
     rhs = function()
       require('nvim-treesitter-textobjects.select').select_textobject('@attribute.inner', "textobjects")
     end,
     mode = {'x', 'o'},
     opts = {
-      desc = 'Treesitter Textobjects: Select Inner Attribute'
+      desc = 'Treesitter Textobjects: Inner Attribute'
     }
   },
   {
-    lhs = 'aa',
+    lhs = 'ar',
     rhs = function()
       require('nvim-treesitter-textobjects.select').select_textobject('@attribute.outer', "textobjects")
     end,
     mode = {'x', 'o'},
     opts = {
-      desc = 'Treesitter Textobjects: Select Outer Attribute'
+      desc = 'Treesitter Textobjects: Outer Attribute'
     }
   },
 }
