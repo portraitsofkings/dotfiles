@@ -1,4 +1,4 @@
-local conditions = require('heirline.conditions')
+local conditions = require("heirline.conditions")
 
 return {
   condition = conditions.is_git_repo,
@@ -8,19 +8,19 @@ return {
   end,
   hl = { fg = "fg" },
   {
-    provider = " "
+    provider = " ",
   },
   {
     provider = function(self)
       return self.status_dict.head and " " .. self.status_dict.head or ""
     end,
-    hl = { bold = true }
+    hl = { bold = true },
   },
   {
     condition = function(self)
       return self.has_changes
     end,
-    provider = "*"
+    provider = "*",
   },
   {
     provider = function(self)

@@ -5,12 +5,12 @@ return {
   ---@type ibl.config
   opts = {
     indent = {
-      char = '▏'
+      char = "▏",
     },
     scope = {
-      char = '▎',
+      char = "▎",
       show_start = false,
-      show_end = false
-    }
+      show_end = false,
+    },
   },
 }

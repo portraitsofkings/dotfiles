@@ -1,6 +1,7 @@
 return {
   init = function(self)
-    self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color_by_filetype(vim.bo.filetype, { default = true })
+    self.icon, self.icon_color =
+      require("nvim-web-devicons").get_icon_color_by_filetype(vim.bo.filetype, { default = true })
   end,
   {
     provider = function(self)
@@ -8,7 +9,7 @@ return {
     end,
     hl = function(self)
       return { fg = self.icon_color }
-    end
+    end,
   },
   {
     hl = function(self)
@@ -16,6 +17,6 @@ return {
     end,
     provider = function()
       return vim.bo.filetype
-    end
-  }
+    end,
+  },
 }

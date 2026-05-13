@@ -4,5 +4,5 @@ return {
     local filename = vim.fn.fnamemodify(fullname, ":t")
     return filename ~= "" and " " .. filename or ""
   end,
-  hl = { fg = "fg" }
+  hl = { fg = "fg" },
 }

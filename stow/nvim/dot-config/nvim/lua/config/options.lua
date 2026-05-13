@@ -1,4 +1,4 @@
--- ~~~~~~~~~~ Indentation ~~~~~~~~~~ 
+-- ~~~~~~~~~~ Indentation ~~~~~~~~~~
 
 -- One <Tab> equals this many spaces
 vim.opt.tabstop = 2
@@ -12,7 +12,7 @@ vim.opt.expandtab = true
 -- Keep line indent when line wraps
 vim.opt.breakindent = true
 
--- ~~~~~~~~~~ Visuals ~~~~~~~~~~ 
+-- ~~~~~~~~~~ Visuals ~~~~~~~~~~
 
 -- Keep this many lines visible around cursor vertically
 vim.opt.scrolloff = 50
@@ -38,12 +38,12 @@ vim.opt.laststatus = 3
 
 -- Show dots instead of spaces
 vim.opt.list = true
-vim.opt.listchars:append({ space = '·' })
+vim.opt.listchars:append({ space = "·" })
 
 -- Hide current mode in cmdline
 vim.opt.showmode = false
 
--- ~~~~~~~~~~ Searching ~~~~~~~~~~ 
+-- ~~~~~~~~~~ Searching ~~~~~~~~~~
 
 -- Ignore case when searching
 vim.opt.ignorecase = true
@@ -51,7 +51,7 @@ vim.opt.ignorecase = true
 -- Override ignorecase when search pattern contains uppercase characters
 vim.opt.smartcase = true
 
--- ~~~~~~~~~~ Other ~~~~~~~~~~ 
+-- ~~~~~~~~~~ Other ~~~~~~~~~~
 
 -- Where new splits are created below and on the right side
 vim.opt.splitbelow = true

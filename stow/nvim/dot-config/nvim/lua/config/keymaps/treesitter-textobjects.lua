@@ -1,63 +1,62 @@
 return {
   {
-    lhs = 'af',
+    lhs = "af",
     rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', "textobjects")
+      require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
     end,
-    mode = {'x', 'o'},
+    mode = { "x", "o" },
     opts = {
-      desc = 'Treesitter Textobjects: Outer Function'
-    }
+      desc = "Treesitter Textobjects: Outer Function",
+    },
   },
   {
-    lhs = 'if',
+    lhs = "if",
     rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', "textobjects")
+      require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
     end,
-    mode = {'x', 'o'},
+    mode = { "x", "o" },
     opts = {
-      desc = 'Treesitter Textobjects: Inner Function'
-    }
+      desc = "Treesitter Textobjects: Inner Function",
+    },
   },
   {
-    lhs = 'ac',
+    lhs = "ac",
     rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@comment.outer', "textobjects")
+      require("nvim-treesitter-textobjects.select").select_textobject("@comment.outer", "textobjects")
     end,
-    mode = {'x', 'o'},
+    mode = { "x", "o" },
     opts = {
-      desc = 'Treesitter Textobjects: Outer Comment'
-    }
+      desc = "Treesitter Textobjects: Outer Comment",
+    },
   },
   {
-    lhs = 'ic',
+    lhs = "ic",
     rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@comment.inner', "textobjects")
+      require("nvim-treesitter-textobjects.select").select_textobject("@comment.inner", "textobjects")
     end,
-    mode = {'x', 'o'},
+    mode = { "x", "o" },
     opts = {
-      desc = 'Treesitter Textobjects: Inner Comment'
-    }
+      desc = "Treesitter Textobjects: Inner Comment",
+    },
   },
   {
-    lhs = 'ir',
+    lhs = "ir",
     rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@attribute.inner', "textobjects")
+      require("nvim-treesitter-textobjects.select").select_textobject("@attribute.inner", "textobjects")
     end,
-    mode = {'x', 'o'},
+    mode = { "x", "o" },
     opts = {
-      desc = 'Treesitter Textobjects: Inner Attribute'
-    }
+      desc = "Treesitter Textobjects: Inner Attribute",
+    },
   },
   {
-    lhs = 'ar',
+    lhs = "ar",
     rhs = function()
-      require('nvim-treesitter-textobjects.select').select_textobject('@attribute.outer', "textobjects")
+      require("nvim-treesitter-textobjects.select").select_textobject("@attribute.outer", "textobjects")
     end,
-    mode = {'x', 'o'},
+    mode = { "x", "o" },
     opts = {
-      desc = 'Treesitter Textobjects: Outer Attribute'
-    }
+      desc = "Treesitter Textobjects: Outer Attribute",
+    },
   },
 }
-

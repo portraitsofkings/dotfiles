@@ -1,34 +1,34 @@
 return {
   {
-    lhs = '-',
-    rhs = '<cmd>Oil<cr>',
-    mode = 'n',
+    lhs = "-",
+    rhs = "<cmd>Oil<cr>",
+    mode = "n",
     opts = {
-      desc = 'Core: Explore'
-    }
+      desc = "Core: Explore",
+    },
   },
   {
-    lhs = '<leader>?',
-    rhs = '<cmd>Telescope keymaps<cr>',
-    mode = 'n',
+    lhs = "<leader>?",
+    rhs = "<cmd>Telescope keymaps<cr>",
+    mode = "n",
     opts = {
-      desc = 'Core: Browse Keymaps'
-    }
+      desc = "Core: Browse Keymaps",
+    },
   },
   {
-    lhs = '<Esc>',
+    lhs = "<Esc>",
     rhs = function()
       if vim.v.hlsearch == 1 then
-        vim.cmd('nohlsearch')
+        vim.cmd("nohlsearch")
       end
 
       if vim.snippet.active() then
         vim.snippet.stop()
       end
     end,
-    mode = 'n',
+    mode = "n",
     opts = {
-      desc = 'Core: Stop Search Highlighting and Snippets'
-    }
+      desc = "Core: Stop Search Highlighting and Snippets",
+    },
   },
 }

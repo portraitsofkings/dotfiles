@@ -1,12 +1,12 @@
 return {
   {
-    lhs = '<leader>en',
+    lhs = "<leader>en",
     rhs = function()
-      require('oil').open(vim.fn.stdpath('config'))
+      require("oil").open(vim.fn.stdpath("config"))
     end,
-    mode = 'n',
+    mode = "n",
     opts = {
-      desc = 'Explore: Neovim Config Directory'
-    }
+      desc = "Explore: Neovim Config Directory",
+    },
   },
 }

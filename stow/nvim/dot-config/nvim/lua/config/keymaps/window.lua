@@ -1,130 +1,130 @@
 return {
   {
-    lhs = '<leader>wH',
-    rhs = '<C-w>H',
-    mode = 'n',
+    lhs = "<leader>wH",
+    rhs = "<C-w>H",
+    mode = "n",
     opts = {
-      desc = 'Window: Move to the Far Left'
-    }
+      desc = "Window: Move to the Far Left",
+    },
   },
   {
-    lhs = '<leader>wL',
-    rhs = '<C-w>L',
-    mode = 'n',
+    lhs = "<leader>wL",
+    rhs = "<C-w>L",
+    mode = "n",
     opts = {
-      desc = 'Window: Move to the Far Right'
-    }
+      desc = "Window: Move to the Far Right",
+    },
   },
   {
-    lhs = '<leader>wK',
-    rhs = '<C-w>K',
-    mode = 'n',
+    lhs = "<leader>wK",
+    rhs = "<C-w>K",
+    mode = "n",
     opts = {
-      desc = 'Window: Move to the Top'
-    }
+      desc = "Window: Move to the Top",
+    },
   },
   {
-    lhs = '<leader>wJ',
-    rhs = '<C-w>J',
-    mode = 'n',
+    lhs = "<leader>wJ",
+    rhs = "<C-w>J",
+    mode = "n",
     opts = {
-      desc = 'Window: Move to the Bottom'
-    }
+      desc = "Window: Move to the Bottom",
+    },
   },
   {
-    lhs = '<M-h>',
-    rhs = '<C-w><',
-    mode = 'n',
+    lhs = "<M-h>",
+    rhs = "<C-w><",
+    mode = "n",
     opts = {
-      desc = 'Window: Decrease Horizontal Size'
-    }
+      desc = "Window: Decrease Horizontal Size",
+    },
   },
   {
-    lhs = '<M-l>',
-    rhs = '<C-w>>',
-    mode = 'n',
+    lhs = "<M-l>",
+    rhs = "<C-w>>",
+    mode = "n",
     opts = {
-      desc = 'Increase Window Horizontal Size'
-    }
+      desc = "Increase Window Horizontal Size",
+    },
   },
   {
-    lhs = '<M-k>',
-    rhs = '<C-w>+',
-    mode = 'n',
+    lhs = "<M-k>",
+    rhs = "<C-w>+",
+    mode = "n",
     opts = {
-      desc = 'Window: Increase Vertical Size'
-    }
+      desc = "Window: Increase Vertical Size",
+    },
   },
   {
-    lhs = '<M-j>',
-    rhs = '<C-w>-',
-    mode = 'n',
+    lhs = "<M-j>",
+    rhs = "<C-w>-",
+    mode = "n",
     opts = {
-      desc = 'Window: Decrease Vertical Size'
-    }
+      desc = "Window: Decrease Vertical Size",
+    },
   },
   {
-    lhs = '<M-=>',
-    rhs = '<C-w>=',
-    mode = 'n',
+    lhs = "<M-=>",
+    rhs = "<C-w>=",
+    mode = "n",
     opts = {
-      desc = 'Window: Resize Equally'
-    }
+      desc = "Window: Resize Equally",
+    },
   },
   {
-    lhs = '<leader>ws',
-    rhs = '<C-w>s',
-    mode = 'n',
+    lhs = "<leader>ws",
+    rhs = "<C-w>s",
+    mode = "n",
     opts = {
-      desc = 'Window: Horizontal Split'
-    }
+      desc = "Window: Horizontal Split",
+    },
   },
   {
-    lhs = '<leader>wv',
-    rhs = '<C-w>v',
-    mode = 'n',
+    lhs = "<leader>wv",
+    rhs = "<C-w>v",
+    mode = "n",
     opts = {
-      desc = 'Window: Vertical Split'
-    }
+      desc = "Window: Vertical Split",
+    },
   },
   {
-    lhs = '<leader>wn',
-    rhs = '<cmd>vnew<cr>',
-    mode = 'n',
+    lhs = "<leader>wn",
+    rhs = "<cmd>vnew<cr>",
+    mode = "n",
     opts = {
-      desc = 'Window: New'
-    }
+      desc = "Window: New",
+    },
   },
   {
-    lhs = '<leader>wo',
-    rhs = '<C-w>o',
-    mode = 'n',
+    lhs = "<leader>wo",
+    rhs = "<C-w>o",
+    mode = "n",
     opts = {
-      desc = 'Window: Only'
-    }
+      desc = "Window: Only",
+    },
   },
   {
-    lhs = '<leader>wc',
-    rhs = '<C-w>c',
-    mode = 'n',
+    lhs = "<leader>wc",
+    rhs = "<C-w>c",
+    mode = "n",
     opts = {
-      desc = 'Window: Close'
-    }
+      desc = "Window: Close",
+    },
   },
   {
-    lhs = '<leader>wq',
-    rhs = '<C-w>q',
-    mode = 'n',
+    lhs = "<leader>wq",
+    rhs = "<C-w>q",
+    mode = "n",
     opts = {
-      desc = 'Window: Quit'
-    }
+      desc = "Window: Quit",
+    },
   },
   {
-    lhs = '<leader>wt',
-    rhs = '<C-w>T',
-    mode = 'n',
+    lhs = "<leader>wt",
+    rhs = "<C-w>T",
+    mode = "n",
     opts = {
-      desc = 'Window: Move to a New Tab'
-    }
+      desc = "Window: Move to a New Tab",
+    },
   },
 }

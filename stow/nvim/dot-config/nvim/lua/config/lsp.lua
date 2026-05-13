@@ -14,21 +14,21 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Add snippet support for these LSPs
-vim.lsp.config('cssls', { capabilities = capabilities })
-vim.lsp.config('html', { capabilities = capabilities })
-vim.lsp.config('jsonls', { capabilities = capabilities })
+vim.lsp.config("cssls", { capabilities = capabilities })
+vim.lsp.config("html", { capabilities = capabilities })
+vim.lsp.config("jsonls", { capabilities = capabilities })
 
-vim.lsp.config('ts_ls', {
+vim.lsp.config("ts_ls", {
   settings = {
     implicitProjectConfiguration = {
       checkJs = true,
-      target = 'esnext',
+      target = "esnext",
     },
     diagnostics = {
       -- List of codes: https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
       ignoredCodes = {
-      -- File is a CommonJS module; it may be converted to an ES module.
-        80001
+        -- File is a CommonJS module; it may be converted to an ES module.
+        80001,
       },
     },
   },

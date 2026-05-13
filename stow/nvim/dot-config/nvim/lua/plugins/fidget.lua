@@ -1,1 +1,1 @@
-return { "j-hui/fidget.nvim", config = true, }
+return { "j-hui/fidget.nvim", config = true }

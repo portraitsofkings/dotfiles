@@ -7,10 +7,10 @@ local function applyKeymaps(maps)
   end
 end
 
-applyKeymaps(require('config.keymaps.core'))
-applyKeymaps(require('config.keymaps.explore'))
-applyKeymaps(require('config.keymaps.tab'))
-applyKeymaps(require('config.keymaps.toggle'))
-applyKeymaps(require('config.keymaps.window'))
-applyKeymaps(require('config.keymaps.treesitter-textobjects'))
-applyKeymaps(require('config.keymaps.telescope'))
+applyKeymaps(require("config.keymaps.core"))
+applyKeymaps(require("config.keymaps.explore"))
+applyKeymaps(require("config.keymaps.tab"))
+applyKeymaps(require("config.keymaps.toggle"))
+applyKeymaps(require("config.keymaps.window"))
+applyKeymaps(require("config.keymaps.treesitter-textobjects"))
+applyKeymaps(require("config.keymaps.telescope"))

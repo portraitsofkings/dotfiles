@@ -1,11 +1,11 @@
 return {
-  'saghen/blink.cmp',
-  dependencies = { 'rafamadriz/friendly-snippets' },
-  version = '1.*',
+  "saghen/blink.cmp",
+  dependencies = { "rafamadriz/friendly-snippets" },
+  version = "1.*",
   opts = {
-    keymap = { preset = 'default' },
+    keymap = { preset = "default" },
     appearance = {
-      nerd_font_variant = 'mono'
+      nerd_font_variant = "mono",
     },
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 0 },
@@ -13,7 +13,7 @@ return {
       ghost_text = { enabled = true },
     },
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
       providers = {
         lazydev = {
           name = "LazyDev",
@@ -28,7 +28,7 @@ return {
       completion = {
         list = { selection = { preselect = true, auto_insert = true } },
         ghost_text = { enabled = true },
-      }
+      },
     },
   },
   opts_extend = { "sources.default" },

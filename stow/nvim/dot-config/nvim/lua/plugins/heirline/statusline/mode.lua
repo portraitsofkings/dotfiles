@@ -4,7 +4,7 @@ return {
     self.modeFirst = self.mode:sub(1, 1)
   end,
   hl = function(self)
-    return { bg = self.mode_colors[self.modeFirst], fg = 'bg_dark', bold = true, }
+    return { bg = self.mode_colors[self.modeFirst], fg = "bg_dark", bold = true }
   end,
   update = {
     "ModeChanged",
@@ -51,36 +51,36 @@ return {
       t = "T",
     },
     mode_colors = {
-      n = "blue" ,
+      n = "blue",
       i = "green",
       v = "magenta",
-      V =  "magenta",
-      ["\22"] =  "magenta",
-      c =  "orange",
-      s =  "purple",
-      S =  "purple",
-      ["\19"] =  "purple",
-      R =  "orange",
-      r =  "orange",
-      ["!"] =  "red",
-      t =  "red",
-    }
+      V = "magenta",
+      ["\22"] = "magenta",
+      c = "orange",
+      s = "purple",
+      S = "purple",
+      ["\19"] = "purple",
+      R = "orange",
+      r = "orange",
+      ["!"] = "red",
+      t = "red",
+    },
   },
   {
-    provider = '',
+    provider = "",
     hl = function(self)
-      return { fg = self.mode_colors[self.modeFirst], bg = 'bg_dark' }
-    end
-  },
-  {
-    provider = function(self)
-      return "%-("..self.mode_names[self.modeFirst].."%)"
+      return { fg = self.mode_colors[self.modeFirst], bg = "bg_dark" }
     end,
   },
   {
-    provider = '',
+    provider = function(self)
+      return "%-(" .. self.mode_names[self.modeFirst] .. "%)"
+    end,
+  },
+  {
+    provider = "",
     hl = function(self)
-      return { fg = self.mode_colors[self.modeFirst], bg = 'bg_dark' }
-    end
+      return { fg = self.mode_colors[self.modeFirst], bg = "bg_dark" }
+    end,
   },
 }

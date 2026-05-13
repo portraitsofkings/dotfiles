@@ -1,11 +1,11 @@
 return {
-  'rebelot/heirline.nvim',
+  "rebelot/heirline.nvim",
   dependencies = {
-    { 'nvim-tree/nvim-web-devicons', opts = {} }
+    { "nvim-tree/nvim-web-devicons", opts = {} },
   },
   config = function()
     -- local conditions = require('heirline.conditions')
-    local utils = require('heirline.utils')
+    local utils = require("heirline.utils")
 
     local theme_colors = require("tokyonight.colors").setup()
     local preset_colors = {
@@ -27,12 +27,12 @@ return {
       git_add = utils.get_highlight("GitSignsAdd").fg,
       git_change = utils.get_highlight("GitSignsChange").fg,
     }
-    local colors = vim.tbl_deep_extend('keep', theme_colors, preset_colors)
-    require('heirline').load_colors(colors)
+    local colors = vim.tbl_deep_extend("keep", theme_colors, preset_colors)
+    require("heirline").load_colors(colors)
 
-    local statusline = require('plugins.heirline.statusline')
-    require('heirline').setup({
+    local statusline = require("plugins.heirline.statusline")
+    require("heirline").setup({
       statusline = statusline,
     })
-  end
+  end,
 }
