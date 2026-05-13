@@ -3,6 +3,7 @@ return {
   dependencies = {
     { "nvim-tree/nvim-web-devicons", opts = {} },
   },
+  event = "VeryLazy",
   config = function()
     -- local conditions = require('heirline.conditions')
     local utils = require("heirline.utils")

@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },
+  event = "VeryLazy",
   opts = {
     enable_on = {
       "html",
