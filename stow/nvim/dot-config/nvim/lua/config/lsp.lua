@@ -21,7 +21,6 @@ vim.lsp.config("jsonls", { capabilities = capabilities })
 vim.lsp.config("ts_ls", {
   settings = {
     implicitProjectConfiguration = {
-      checkJs = true,
       target = "esnext",
     },
     diagnostics = {
