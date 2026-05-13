@@ -17,6 +17,6 @@ return {
       ["<leader>ex"] = { "actions.open_external", opts = { desc = "Explore: Open in External Program" } },
     },
   },
-  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
 }
