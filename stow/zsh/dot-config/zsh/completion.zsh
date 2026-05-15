@@ -10,6 +10,8 @@ zstyle ':completion:*:git-checkout:*' sort false
 # fzf-tab completion settings
 # disable sort when completing `git switch`
 zstyle ':completion:*:git-switch:*' sort false
+# disable sort when completing `git diff`
+zstyle ':completion:*:git-diff:*' sort false
 # set descriptions format to enable group support
 # NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
