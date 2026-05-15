@@ -8,3 +8,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 # Show only completion suggestions
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
+
+# fzf completion menu
+zinit light Aloxaf/fzf-tab

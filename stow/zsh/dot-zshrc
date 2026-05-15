@@ -5,9 +5,10 @@ source "$ZSH_CONFIG_DIR/option.zsh"
 source "$ZSH_CONFIG_DIR/alias.zsh"
 source "$ZSH_CONFIG_DIR/function.zsh"
 source "$ZSH_CONFIG_DIR/keymap.zsh"
-source "$ZSH_CONFIG_DIR/completion.zsh"
 source "$ZSH_CONFIG_DIR/plugin-manager.zsh"
+source "$ZSH_CONFIG_DIR/completion.zsh"
 source "$ZSH_CONFIG_DIR/plugins.zsh"
 source "$ZSH_CONFIG_DIR/prompt.zsh"
+source "$ZSH_CONFIG_DIR/shell-integration.zsh"
 
 # vim:ft=zsh
