@@ -1,3 +1,9 @@
+# Use emacs keymap layout
+bindkey -e
+
+# Expand ! commands
+bindkey ' ' magic-space
+
 # https://unix.stackexchange.com/a/531178
 function clear-scrollback-buffer {
   clear && printf "\e[3J"
