@@ -3,6 +3,12 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 # Colors for completions
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 
+# Stop looking if we already have an exact match
+zstyle ':completion:*' accept-exact '*(N)'
+# Enable completion caching
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
+
 # ~~~ fzf-tab completion settings ~~~
 
 # disable sort when completing `git checkout`
