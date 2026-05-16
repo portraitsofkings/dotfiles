@@ -30,7 +30,7 @@ return {
       local has_next = self.warnings > 0 or self.info > 0 or self.hints > 0
       return self.error_icon .. self.errors .. (has_next and " " or "")
     end,
-    hl = { fg = "error" },
+    hl = { fg = "diag_error" },
   },
   {
     provider = function(self)
@@ -40,7 +40,7 @@ return {
       local has_next = self.info > 0 or self.hints > 0
       return self.warn_icon .. self.warnings .. (has_next and " " or "")
     end,
-    hl = { fg = "warning" },
+    hl = { fg = "diag_warning" },
   },
   {
     provider = function(self)
@@ -50,7 +50,7 @@ return {
       local has_next = self.hints > 0
       return self.info_icon .. self.info .. (has_next and " " or "")
     end,
-    hl = { fg = "info" },
+    hl = { fg = "diag_info" },
   },
   {
     provider = function(self)
@@ -59,6 +59,6 @@ return {
       end
       return self.hint_icon .. self.hints
     end,
-    hl = { fg = "hint" },
+    hl = { fg = "diag_hint" },
   },
 }

@@ -8,25 +8,25 @@ return {
     -- local conditions = require('heirline.conditions')
     local utils = require("heirline.utils")
 
-    local theme_colors = require("tokyonight.colors").setup()
+    local theme_colors = require("kanagawa.colors").setup().theme
     local preset_colors = {
-      bright_bg = utils.get_highlight("Folded").bg,
-      bright_fg = utils.get_highlight("Folded").fg,
-      red = utils.get_highlight("DiagnosticError").fg,
-      dark_red = utils.get_highlight("DiffDelete").bg,
-      green = utils.get_highlight("String").fg,
-      blue = utils.get_highlight("Function").fg,
-      gray = utils.get_highlight("NonText").fg,
+      bg_dark = theme_colors.ui.bg_dim,
+      bright_bg = theme_colors.ui.bg,
+      bright_fg = theme_colors.ui.fg,
+      red = theme_colors.term[2],
+      green = theme_colors.term[3],
+      blue = theme_colors.term[5],
+      gray = theme_colors.term[9],
       orange = utils.get_highlight("Constant").fg,
       purple = utils.get_highlight("Statement").fg,
       cyan = utils.get_highlight("Special").fg,
-      diag_warn = utils.get_highlight("DiagnosticWarn").fg,
-      diag_error = utils.get_highlight("DiagnosticError").fg,
-      diag_hint = utils.get_highlight("DiagnosticHint").fg,
-      diag_info = utils.get_highlight("DiagnosticInfo").fg,
-      git_del = utils.get_highlight("GitSignsDelete").fg,
-      git_add = utils.get_highlight("GitSignsAdd").fg,
-      git_change = utils.get_highlight("GitSignsChange").fg,
+      diag_warning = theme_colors.diag.warning,
+      diag_error = theme_colors.diag.error,
+      diag_hint = theme_colors.diag.hint,
+      diag_info = theme_colors.diag.info,
+      git_del = theme_colors.vcs.removed,
+      git_add = theme_colors.vcs.added,
+      git_change = theme_colors.vcs.changed,
     }
     local colors = vim.tbl_deep_extend("keep", theme_colors, preset_colors)
     require("heirline").load_colors(colors)
