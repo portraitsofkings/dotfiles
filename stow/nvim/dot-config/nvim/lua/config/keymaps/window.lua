@@ -1,3 +1,7 @@
+local smart_splits = function()
+  return require("smart-splits")
+end
+
 return {
   {
     lhs = "<leader>wH",
@@ -32,35 +36,83 @@ return {
     },
   },
   {
+    lhs = "<C-h>",
+    rhs = function()
+      smart_splits().move_cursor_left()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Window: Move Cursor Left",
+    },
+  },
+  {
+    lhs = "<C-j>",
+    rhs = function()
+      smart_splits().move_cursor_down()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Window: Move Cursor Down",
+    },
+  },
+  {
+    lhs = "<C-k>",
+    rhs = function()
+      smart_splits().move_cursor_up()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Window: Move Cursor Up",
+    },
+  },
+  {
+    lhs = "<C-l>",
+    rhs = function()
+      smart_splits().move_cursor_right()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Window: Move Cursor Right",
+    },
+  },
+  {
     lhs = "<M-h>",
-    rhs = "<C-w><",
+    rhs = function()
+      smart_splits().resize_left()
+    end,
     mode = "n",
     opts = {
-      desc = "Window: Decrease Horizontal Size",
-    },
-  },
-  {
-    lhs = "<M-l>",
-    rhs = "<C-w>>",
-    mode = "n",
-    opts = {
-      desc = "Increase Window Horizontal Size",
-    },
-  },
-  {
-    lhs = "<M-k>",
-    rhs = "<C-w>+",
-    mode = "n",
-    opts = {
-      desc = "Window: Increase Vertical Size",
+      desc = "Window: Resize Left",
     },
   },
   {
     lhs = "<M-j>",
-    rhs = "<C-w>-",
+    rhs = function()
+      smart_splits().resize_down()
+    end,
     mode = "n",
     opts = {
-      desc = "Window: Decrease Vertical Size",
+      desc = "Window: Resize Down",
+    },
+  },
+  {
+    lhs = "<M-k>",
+    rhs = function()
+      smart_splits().resize_up()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Window: Resize Up",
+    },
+  },
+  {
+    lhs = "<M-l>",
+    rhs = function()
+      smart_splits().resize_right()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Window: Resize Right",
     },
   },
   {
