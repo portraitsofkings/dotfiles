@@ -8,5 +8,19 @@ local Encoding = require("plugins.heirline.statusline.encoding")
 local FileFormat = require("plugins.heirline.statusline.fileformat")
 local FileType = require("plugins.heirline.statusline.filetype")
 local Ruler = require("plugins.heirline.statusline.ruler")
+local LiveServer = require("plugins.heirline.statusline.live-server")
 
-return { Mode, Flags, File, Git, Diagnostics, LSP, { provider = "%-<%=%<" }, Ruler, Encoding, FileFormat, FileType }
+return {
+  Mode,
+  Flags,
+  File,
+  Git,
+  Diagnostics,
+  LSP,
+  { provider = "%-<%=%<" },
+  LiveServer,
+  Ruler,
+  Encoding,
+  FileFormat,
+  FileType,
+}
