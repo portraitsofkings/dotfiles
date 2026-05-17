@@ -15,10 +15,13 @@ vim.opt.breakindent = true
 -- ~~~~~~~~~~ Visuals ~~~~~~~~~~
 
 -- Keep this many lines visible around cursor vertically
-vim.opt.scrolloff = 50
+vim.opt.scrolloff = 10
 
 -- Keep this many lines visible around cursor horizontally
 vim.opt.sidescrolloff = 10
+
+-- Scroll through visible lines, instead of logical ones
+vim.opt.smoothscroll = true
 
 -- Text wrapping to next line
 vim.opt.wrap = false
