@@ -32,6 +32,14 @@ return {
     },
   },
   {
+    lhs = "<leader>fk",
+    rhs = "<cmd>Telescope keymaps<cr>",
+    mode = "n",
+    opts = {
+      desc = "Telescope: Find Keymaps",
+    },
+  },
+  {
     lhs = "<leader>fn",
     rhs = function()
       require("telescope.builtin").find_files({
