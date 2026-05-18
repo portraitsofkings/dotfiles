@@ -10,6 +10,7 @@ end
 applyKeymaps(require("config.keymaps.core"))
 applyKeymaps(require("config.keymaps.explore"))
 applyKeymaps(require("config.keymaps.tab"))
+applyKeymaps(require("config.keymaps.lsp"))
 applyKeymaps(require("config.keymaps.toggle"))
 applyKeymaps(require("config.keymaps.window"))
 applyKeymaps(require("config.keymaps.buffer"))
