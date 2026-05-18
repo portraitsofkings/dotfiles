@@ -1,10 +1,18 @@
+local function getName(ctx)
+  return ctx.MODE_NAMES[ctx.modeFirst]
+end
+
+local function getHighlight(ctx)
+  return ctx.MODE_COLORS[ctx.modeFirst]
+end
+
 return {
   init = function(self)
     self.mode = vim.fn.mode(1)
     self.modeFirst = self.mode:sub(1, 1)
   end,
   hl = function(self)
-    return { bg = self.mode_colors[self.modeFirst], fg = "bg_dark", bold = true }
+    return { bg = getHighlight(self), fg = "bg_dark", bold = true }
   end,
   update = {
     "ModeChanged",
@@ -14,7 +22,7 @@ return {
     end),
   },
   static = {
-    mode_names = {
+    MODE_NAMES = {
       n = "N",
       no = "N?",
       nov = "N?",
@@ -50,7 +58,7 @@ return {
       ["!"] = "!",
       t = "T",
     },
-    mode_colors = {
+    MODE_COLORS = {
       n = "blue",
       i = "green",
       v = "magenta",
@@ -67,20 +75,8 @@ return {
     },
   },
   {
-    provider = "",
-    hl = function(self)
-      return { fg = self.mode_colors[self.modeFirst], bg = "bg_dark" }
-    end,
-  },
-  {
     provider = function(self)
-      return "%-(" .. self.mode_names[self.modeFirst] .. "%)"
-    end,
-  },
-  {
-    provider = "",
-    hl = function(self)
-      return { fg = self.mode_colors[self.modeFirst], bg = "bg_dark" }
+      return " " .. getName(self) .. " "
     end,
   },
 }
