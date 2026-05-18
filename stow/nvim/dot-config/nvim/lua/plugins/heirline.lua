@@ -4,7 +4,7 @@ return {
     { "nvim-tree/nvim-web-devicons", opts = {} },
   },
   config = function()
-    -- local conditions = require('heirline.conditions')
+    -- local conditions = require("heirline.conditions")
     local utils = require("heirline.utils")
 
     local theme_colors = require("kanagawa.colors").setup().theme
