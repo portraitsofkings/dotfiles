@@ -1,7 +1,15 @@
 return {
-  provider = function()
-    local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc -- :h 'enc'
-    return " " .. enc:upper()
+  init = function(self)
+    self.encoding = (vim.bo.fenc ~= "" and vim.bo.fenc:upper()) or vim.o.enc:upper()
   end,
-  hl = { fg = "fg" },
+  flexible = 1,
+  {
+    { provider = " " },
+    {
+      provider = function(self)
+        return self.encoding
+      end,
+    },
+  },
+  { provider = "" },
 }

@@ -6,9 +6,29 @@ local git = require("plugins.heirline.statusline.git")
 local diagnostics = require("plugins.heirline.statusline.diagnostics")
 local lsp = require("plugins.heirline.statusline.lsp")
 local live_server = require("plugins.heirline.statusline.live-server")
--- local Encoding = require("plugins.heirline.statusline.encoding")
--- local FileFormat = require("plugins.heirline.statusline.fileformat")
--- local FileType = require("plugins.heirline.statusline.filetype")
--- local Ruler = require("plugins.heirline.statusline.ruler")
+local encoding = require("plugins.heirline.statusline.encoding")
+local file_format = require("plugins.heirline.statusline.fileformat")
+local file_type = require("plugins.heirline.statusline.filetype")
+local ruler = require("plugins.heirline.statusline.ruler")
 
-return { mode, file, flags, git, gitremote, diagnostics, lsp, live_server }
+local separator = { provider = "%=" }
+local trim = { provider = "%<" }
+
+return {
+  hl = { bg = "bg" },
+  mode,
+  file,
+  trim,
+  flags,
+  git,
+  gitremote,
+  diagnostics,
+  live_server,
+  separator,
+  lsp,
+  separator,
+  ruler,
+  encoding,
+  file_format,
+  file_type,
+}

@@ -18,6 +18,12 @@ return {
       provider = " ",
     },
     {
+      on_click = {
+        callback = function()
+          vim.cmd("LiveServerStatus")
+        end,
+        name = "heirline_live_server",
+      },
       provider = function(self)
         return " " .. self.openPorts
       end,

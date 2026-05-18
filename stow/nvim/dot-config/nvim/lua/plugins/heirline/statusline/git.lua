@@ -1,20 +1,31 @@
 local conditions = require("heirline.conditions")
 
 return {
-  condition = conditions.is_git_repo,
   init = function(self)
     self.status_dict = vim.b.gitsigns_status_dict
-    self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
+
+    vim.system({ "git", "status", "--porcelain" }, { text = true }, function(response)
+      self.has_changes = response.stdout ~= ""
+    end)
+
+    vim.system({ "git", "branch", "--show-current" }, { text = true }, function(response)
+      local NO_ERRORS = response.code == 0
+      if NO_ERRORS then
+        self.current_branch = vim.trim(response.stdout)
+      end
+    end)
   end,
-  hl = { fg = "fg" },
   {
-    provider = " ",
-  },
-  {
-    provider = function(self)
-      return self.status_dict.head and " " .. self.status_dict.head or ""
+    condition = function(self)
+      return self.current_branch
     end,
-    hl = { bold = true },
+    { provider = " " },
+    { provider = "󰘬 " },
+    {
+      provider = function(self)
+        return self.current_branch
+      end,
+    },
   },
   {
     condition = function(self)
@@ -23,24 +34,39 @@ return {
     provider = "*",
   },
   {
-    provider = function(self)
-      local count = self.status_dict.added or 0
-      return count > 0 and ("+" .. count)
-    end,
-    hl = { fg = "git_add" },
-  },
-  {
-    provider = function(self)
-      local count = self.status_dict.removed or 0
-      return count > 0 and ("-" .. count)
-    end,
-    hl = { fg = "git_del" },
-  },
-  {
-    provider = function(self)
-      local count = self.status_dict.changed or 0
-      return count > 0 and ("~" .. count)
-    end,
-    hl = { fg = "git_change" },
+    condition = conditions.is_git_repo,
+    {
+      flexible = 75,
+      {
+        provider = function(self)
+          local count = self.status_dict.added or 0
+          return count > 0 and ("+" .. count)
+        end,
+        hl = { fg = "git_add" },
+      },
+      { provider = "" },
+    },
+    {
+      flexible = 75,
+      {
+        provider = function(self)
+          local count = self.status_dict.removed or 0
+          return count > 0 and ("-" .. count)
+        end,
+        hl = { fg = "git_del" },
+      },
+      { provider = "" },
+    },
+    {
+      flexible = 75,
+      {
+        provider = function(self)
+          local count = self.status_dict.changed or 0
+          return count > 0 and ("~" .. count)
+        end,
+        hl = { fg = "git_change" },
+      },
+      { provider = "" },
+    },
   },
 }

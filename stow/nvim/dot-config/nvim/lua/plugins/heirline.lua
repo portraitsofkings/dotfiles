@@ -16,6 +16,7 @@ return {
       red = theme_colors.term[2],
       green = theme_colors.term[3],
       blue = theme_colors.term[5],
+      magenta = theme_colors.term[6],
       gray = theme_colors.term[9],
       orange = utils.get_highlight("Constant").fg,
       purple = utils.get_highlight("Statement").fg,

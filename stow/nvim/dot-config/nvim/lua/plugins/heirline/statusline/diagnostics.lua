@@ -20,45 +20,51 @@ return {
   end,
   update = { "DiagnosticChanged", "BufEnter" },
   {
-    provider = " ",
+    condition = function(self)
+      return self.errors > 0
+    end,
+    { provider = " " },
+    {
+      provider = function(self)
+        return self.error_icon .. self.errors
+      end,
+      hl = { fg = "diag_error" },
+    },
   },
   {
-    provider = function(self)
-      if self.errors == 0 then
-        return
-      end
-      local has_next = self.warnings > 0 or self.info > 0 or self.hints > 0
-      return self.error_icon .. self.errors .. (has_next and " " or "")
+    condition = function(self)
+      return self.warnings > 0
     end,
-    hl = { fg = "diag_error" },
+    { provider = " " },
+    {
+      provider = function(self)
+        return self.warn_icon .. self.warnings
+      end,
+      hl = { fg = "diag_warning" },
+    },
   },
   {
-    provider = function(self)
-      if self.warnings == 0 then
-        return
-      end
-      local has_next = self.info > 0 or self.hints > 0
-      return self.warn_icon .. self.warnings .. (has_next and " " or "")
+    condition = function(self)
+      return self.info > 0
     end,
-    hl = { fg = "diag_warning" },
+    { provider = " " },
+    {
+      provider = function(self)
+        return self.info_icon .. self.info
+      end,
+      hl = { fg = "diag_info" },
+    },
   },
   {
-    provider = function(self)
-      if self.info == 0 then
-        return
-      end
-      local has_next = self.hints > 0
-      return self.info_icon .. self.info .. (has_next and " " or "")
+    condition = function(self)
+      return self.hints > 0
     end,
-    hl = { fg = "diag_info" },
-  },
-  {
-    provider = function(self)
-      if self.hints == 0 then
-        return
-      end
-      return self.hint_icon .. self.hints
-    end,
-    hl = { fg = "diag_hint" },
+    { provider = " " },
+    {
+      provider = function(self)
+        return self.hint_icon .. self.hints
+      end,
+      hl = { fg = "diag_hint" },
+    },
   },
 }

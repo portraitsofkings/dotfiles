@@ -6,6 +6,7 @@ return {
       self.behind = tonumber(behind) or 0
     end)
   end,
+  flexible = 75,
   {
     condition = function(self)
       return (self.ahead and self.behind) and (self.ahead > 0 or self.behind > 0)
@@ -18,5 +19,8 @@ return {
         return " " .. tostring(self.behind) .. "" .. tostring(self.ahead) .. ""
       end,
     },
+  },
+  {
+    provider = "",
   },
 }

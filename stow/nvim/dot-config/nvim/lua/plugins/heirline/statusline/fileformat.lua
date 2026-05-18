@@ -1,21 +1,23 @@
+local formats = {
+  ["unix"] = "LF",
+  ["dos"] = "CRLF",
+  ["mac"] = "CR",
+}
+
 return {
-  provider = function()
-    local format = vim.bo.fileformat
-    local out = ""
-
-    if format == "unix" then
-      out = "LF"
-    end
-
-    if format == "dos" then
-      out = "CRLF"
-    end
-
-    if format == "mac" then
-      out = "CR"
-    end
-
-    return " " .. (#out > 0 and out or format)
+  init = function(self)
+    self.format = formats[vim.bo.fileformat] or vim.bo.fileformat
   end,
-  hl = { fg = "fg" },
+  flexible = 5,
+  {
+    { provider = " " },
+    {
+      provider = function(self)
+        return self.format
+      end,
+    },
+  },
+  {
+    provider = "",
+  },
 }
