@@ -10,7 +10,7 @@ return {
   {
     lhs = "<leader>la",
     rhs = vim.lsp.buf.code_action,
-    mode = "n",
+    mode = { "n", "x" },
     opts = {
       desc = "LSP: Code Action",
     },
