@@ -4,7 +4,7 @@ return {
     rhs = "<cmd>Telescope find_files<cr>",
     mode = "n",
     opts = {
-      desc = "Telescope: Find Files",
+      desc = "Telescope: Files",
     },
   },
   {
@@ -12,7 +12,7 @@ return {
     rhs = "<cmd>Telescope live_grep<cr>",
     mode = "n",
     opts = {
-      desc = "Telescope: Live Grep",
+      desc = "Telescope: Grep",
     },
   },
   {
@@ -20,7 +20,7 @@ return {
     rhs = "<cmd>Telescope help_tags<cr>",
     mode = "n",
     opts = {
-      desc = "Telescope: Find Help",
+      desc = "Telescope: Help",
     },
   },
   {
@@ -28,7 +28,7 @@ return {
     rhs = "<cmd>Telescope buffers<cr>",
     mode = "n",
     opts = {
-      desc = "Telescope: Find Buffers",
+      desc = "Telescope: Buffers",
     },
   },
   {
@@ -36,7 +36,7 @@ return {
     rhs = "<cmd>Telescope keymaps<cr>",
     mode = "n",
     opts = {
-      desc = "Telescope: Find Keymaps",
+      desc = "Telescope: Keymaps",
     },
   },
   {
@@ -48,7 +48,7 @@ return {
     end,
     mode = "n",
     opts = {
-      desc = "Fuzzy Find Neovim Directory",
+      desc = "Telescope: Neovim Config",
     },
   },
 }
