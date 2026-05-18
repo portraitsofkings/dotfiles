@@ -10,6 +10,10 @@ return {
 
     vim.system({ "git", "branch", "--show-current" }, { text = true }, function(response)
       local NO_ERRORS = response.code == 0
+
+      -- Reset, to break conditions when we cd out of git repo
+      self.current_branch = nil
+
       if NO_ERRORS then
         self.current_branch = vim.trim(response.stdout)
       end
@@ -29,12 +33,14 @@ return {
   },
   {
     condition = function(self)
-      return self.has_changes
+      return self.current_branch and self.has_changes
     end,
     provider = "*",
   },
   {
-    condition = conditions.is_git_repo,
+    condition = function(self)
+      return self.current_branch and conditions.is_git_repo()
+    end,
     {
       flexible = 75,
       {
