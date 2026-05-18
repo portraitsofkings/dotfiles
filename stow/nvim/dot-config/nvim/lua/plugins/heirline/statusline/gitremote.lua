@@ -8,7 +8,6 @@ return {
   end,
   flexible = 75,
   {
-    update = "DirChanged",
     condition = function(self)
       return (self.ahead and self.behind) and (self.ahead > 0 or self.behind > 0)
     end,
@@ -22,7 +21,6 @@ return {
     },
   },
   {
-    update = "DirChanged",
     provider = "",
   },
 }
