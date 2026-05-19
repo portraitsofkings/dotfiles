@@ -1,6 +1,8 @@
 vim.diagnostic.config({
   -- Add virtual text on lines with diagnostics
-  virtual_text = true,
+  virtual_text = {
+    prefix = "●",
+  },
   -- Set up diagnostic icons
   signs = {
     text = {
