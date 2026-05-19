@@ -10,3 +10,8 @@ resize_increments = true
 bindings = [
   { key = "F11", action = "ToggleFullscreen" },
 ]
+
+[font]
+normal = {
+  family = "AdwaitaMono Nerd Font Mono"
+}
