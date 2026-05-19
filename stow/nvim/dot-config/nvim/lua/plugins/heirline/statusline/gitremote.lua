@@ -15,6 +15,12 @@ return {
       provider = " ",
     },
     {
+      on_click = {
+        callback = function()
+          vim.cmd("Neogit")
+        end,
+        name = "heirline_git",
+      },
       provider = function(self)
         return " " .. tostring(self.behind) .. "" .. tostring(self.ahead) .. ""
       end,

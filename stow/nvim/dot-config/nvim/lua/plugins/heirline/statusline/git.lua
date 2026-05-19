@@ -1,5 +1,12 @@
 local conditions = require("heirline.conditions")
 
+local onClick = {
+  callback = function()
+    vim.cmd("Neogit")
+  end,
+  name = "heirline_gitremote",
+}
+
 return {
   init = function(self)
     self.status_dict = vim.b.gitsigns_status_dict
@@ -24,14 +31,18 @@ return {
       return self.current_branch
     end,
     { provider = " " },
-    { provider = "󰘬 " },
     {
-      provider = function(self)
-        return self.current_branch
-      end,
+      on_click = onClick,
+      { provider = "󰘬 " },
+      {
+        provider = function(self)
+          return self.current_branch
+        end,
+      },
     },
   },
   {
+    on_click = onClick,
     condition = function(self)
       return self.current_branch and self.has_changes
     end,
@@ -44,6 +55,7 @@ return {
     {
       flexible = 75,
       {
+        on_click = onClick,
         provider = function(self)
           local count = self.status_dict.added or 0
           return count > 0 and ("+" .. count)
@@ -55,6 +67,7 @@ return {
     {
       flexible = 75,
       {
+        on_click = onClick,
         provider = function(self)
           local count = self.status_dict.removed or 0
           return count > 0 and ("-" .. count)
@@ -66,6 +79,7 @@ return {
     {
       flexible = 75,
       {
+        on_click = onClick,
         provider = function(self)
           local count = self.status_dict.changed or 0
           return count > 0 and ("~" .. count)
