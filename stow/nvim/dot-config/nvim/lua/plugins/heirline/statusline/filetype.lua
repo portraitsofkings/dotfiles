@@ -1,6 +1,10 @@
 local names = {
-  [""] = "Plain Text",
+  [""] = "Unknown",
+  ["text"] = "Text",
   ["javascript"] = "JavaScript",
+  ["typescript"] = "TypeScript",
+  ["javascriptreact"] = "JavaScript JSX",
+  ["typescriptreact"] = "TypeScript JSX",
   ["html"] = "HTML",
   ["css"] = "CSS",
   ["lua"] = "Lua",
@@ -8,6 +12,14 @@ local names = {
   ["cpp"] = "C++",
   ["gitcommit"] = "Git Commit Message",
   ["gitignore"] = "Git Ignore",
+  ["markdown"] = "Markdown",
+  ["json"] = "JSON",
+  ["jsonc"] = "JSON with Comments",
+  ["jsonl"] = "JSON Lines",
+  ["sh"] = "Shell Script",
+  ["python"] = "Python",
+  ["xml"] = "XML",
+  ["yaml"] = "YAML",
 }
 local fileFormat = {
   {
