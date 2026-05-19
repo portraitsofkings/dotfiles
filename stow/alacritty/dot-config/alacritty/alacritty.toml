@@ -1,0 +1,4 @@
+[general]
+import = [
+  "~/.config/alacritty/themes/tokyonight_night.toml"
+]
