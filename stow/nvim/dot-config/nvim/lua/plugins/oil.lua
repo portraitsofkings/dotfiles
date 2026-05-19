@@ -3,6 +3,15 @@ return {
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
+    keymaps_help = {
+      border = "rounded",
+    },
+    confirmation = {
+      border = "rounded",
+      win_options = {
+        winhighlight = "Normal:Normal,FloatBorder:OilConfirmBorder",
+      },
+    },
     use_default_keymaps = false,
     keymaps = {
       ["<leader>e?"] = { "actions.show_help", mode = "n", desc = "Explore: Show Help" },
@@ -18,5 +27,9 @@ return {
     },
   },
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function(_, opts)
+    vim.api.nvim_set_hl(0, "OilConfirmBorder", { fg = "#54546D", bg = "#1F1F28" })
+    require("oil").setup(opts)
+  end,
   lazy = false,
 }
