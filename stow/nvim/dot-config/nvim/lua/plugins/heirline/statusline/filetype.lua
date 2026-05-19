@@ -20,6 +20,7 @@ local names = {
   ["python"] = "Python",
   ["xml"] = "XML",
   ["yaml"] = "YAML",
+  ["toml"] = "TOML",
 }
 local fileFormat = {
   {
