@@ -5,3 +5,8 @@ import = [
 
 [window]
 resize_increments = true
+
+[keyboard]
+bindings = [
+  { key = "F11", action = "ToggleFullscreen" },
+]
