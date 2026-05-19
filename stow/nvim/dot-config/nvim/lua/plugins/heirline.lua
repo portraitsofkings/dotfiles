@@ -5,29 +5,51 @@ return {
   },
   config = function()
     -- local conditions = require("heirline.conditions")
-    local utils = require("heirline.utils")
+    -- local utils = require("heirline.utils")
 
-    local theme_colors = require("kanagawa.colors").setup().theme
+    -- https://github.com/folke/tokyonight.nvim/tree/main/lua/tokyonight/colors
+    local theme_colors = require("tokyonight.colors").setup()
     local preset_colors = {
-      bg_dark = theme_colors.ui.bg_dim,
-      bright_bg = theme_colors.ui.bg,
-      bright_fg = theme_colors.ui.fg,
-      red = theme_colors.term[2],
-      green = theme_colors.term[3],
-      blue = theme_colors.term[5],
-      magenta = theme_colors.term[6],
-      gray = theme_colors.term[9],
-      orange = utils.get_highlight("Constant").fg,
-      purple = utils.get_highlight("Statement").fg,
-      cyan = utils.get_highlight("Special").fg,
-      diag_warning = theme_colors.diag.warning,
-      diag_error = theme_colors.diag.error,
-      diag_hint = theme_colors.diag.hint,
-      diag_info = theme_colors.diag.info,
-      git_del = theme_colors.vcs.removed,
-      git_add = theme_colors.vcs.added,
-      git_change = theme_colors.vcs.changed,
+      bg = theme_colors.bg,
+      bg_dark = theme_colors.bg_dark,
+      bg_dark1 = theme_colors.bg_dark1,
+      bg_highlight = theme_colors.bg_highlight,
+      blue = theme_colors.blue,
+      blue0 = theme_colors.blue0,
+      blue1 = theme_colors.blue1,
+      blue2 = theme_colors.blue2,
+      blue5 = theme_colors.blue5,
+      blue6 = theme_colors.blue6,
+      blue7 = theme_colors.blue7,
+      comment = theme_colors.comment,
+      cyan = theme_colors.cyan,
+      dark3 = theme_colors.dark3,
+      dark5 = theme_colors.dark5,
+      fg = theme_colors.fg,
+      fg_dark = theme_colors.fg_dark,
+      fg_gutter = theme_colors.fg_gutter,
+      green = theme_colors.green,
+      green1 = theme_colors.green1,
+      green2 = theme_colors.green2,
+      magenta = theme_colors.magenta,
+      magenta2 = theme_colors.magenta2,
+      orange = theme_colors.orange,
+      purple = theme_colors.purple,
+      red = theme_colors.red,
+      red1 = theme_colors.red1,
+      teal = theme_colors.teal,
+      terminal_black = theme_colors.terminal_black,
+      yellow = theme_colors.yellow,
+      git_del = theme_colors.git.delete,
+      git_add = theme_colors.git.add,
+      git_change = theme_colors.git.change,
+
+      diag_warning = theme_colors.warning,
+      diag_error = theme_colors.error,
+      diag_hint = theme_colors.hint,
+      diag_info = theme_colors.info,
     }
+
     local colors = vim.tbl_deep_extend("keep", theme_colors, preset_colors)
     require("heirline").load_colors(colors)
 
