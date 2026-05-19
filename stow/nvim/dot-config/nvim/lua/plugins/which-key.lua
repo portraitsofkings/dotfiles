@@ -57,8 +57,5 @@ return {
   },
   config = function(_, opts)
     require("which-key").setup(opts)
-    vim.api.nvim_set_hl(0, "WhichKeyBorder", { fg = "#54546D", bg = "#1F1F28" })
-    vim.api.nvim_set_hl(0, "WhichKeyNormal", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "WhichKeyTitle", { link = "Normal" })
   end,
 }

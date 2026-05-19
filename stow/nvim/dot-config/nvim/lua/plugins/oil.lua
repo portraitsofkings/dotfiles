@@ -8,9 +8,6 @@ return {
     },
     confirmation = {
       border = "rounded",
-      win_options = {
-        winhighlight = "Normal:Normal,FloatBorder:OilConfirmBorder",
-      },
     },
     use_default_keymaps = false,
     keymaps = {
@@ -27,9 +24,5 @@ return {
     },
   },
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function(_, opts)
-    vim.api.nvim_set_hl(0, "OilConfirmBorder", { fg = "#54546D", bg = "#1F1F28" })
-    require("oil").setup(opts)
-  end,
   lazy = false,
 }
