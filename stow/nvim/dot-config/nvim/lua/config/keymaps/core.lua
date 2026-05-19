@@ -8,14 +8,6 @@ return {
     },
   },
   {
-    lhs = "<leader>?",
-    rhs = "<cmd>Telescope keymaps<cr>",
-    mode = "n",
-    opts = {
-      desc = "Core: Browse Keymaps",
-    },
-  },
-  {
     lhs = "<Esc>",
     rhs = function()
       if vim.v.hlsearch == 1 then
@@ -29,6 +21,16 @@ return {
     mode = "n",
     opts = {
       desc = "Core: Stop Search Highlighting and Snippets",
+    },
+  },
+  {
+    lhs = "<leader>?",
+    rhs = function()
+      require("which-key").show()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Core: Show Global Keymaps",
     },
   },
 }

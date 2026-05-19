@@ -1,0 +1,64 @@
+return {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    win = {
+      padding = { 0, 1 },
+      width = { min = 20, max = 60 },
+      height = { min = 3, max = 0.75 },
+      col = -1,
+      row = -1,
+      title = true,
+      title_pos = "center",
+      border = "rounded",
+      no_overlap = true,
+    },
+    layout = {
+      width = { min = 90 },
+    },
+    delay = 200,
+    plugins = {
+      marks = true,
+      registers = true,
+    },
+    triggers = {
+      { "<leader>", mode = { "n", "v" } },
+    },
+    icons = {
+      group = "",
+      separator = "",
+    },
+    spec = {
+      { lhs = "-", icon = { icon = " ", color = "orange" } },
+      { lhs = "<leader>?", icon = { icon = " ", color = "blue" } },
+      { lhs = "<leader>w", group = "Window", icon = { icon = " ", color = "blue" } },
+      { lhs = "<leader>wc", icon = { icon = " ", color = "red" } },
+      { lhs = "<leader>wq", icon = { icon = " ", color = "red" } },
+      { lhs = "<leader>wH", icon = { icon = "󰄽 ", color = "blue" } },
+      { lhs = "<leader>wJ", icon = { icon = "󰄼 ", color = "blue" } },
+      { lhs = "<leader>wK", icon = { icon = "󰄿 ", color = "blue" } },
+      { lhs = "<leader>wL", icon = { icon = "󰄾 ", color = "blue" } },
+      { lhs = "<leader>wo", icon = { icon = " ", color = "yellow" } },
+      { lhs = "<leader>wn", icon = { icon = " ", color = "blue" } },
+      { lhs = "<leader>ws", icon = { icon = " ", color = "blue" } },
+      { lhs = "<leader>wv", icon = { icon = " ", color = "blue" } },
+      { lhs = "<leader>wt", icon = { icon = "󰝜 ", color = "purple" } },
+      { lhs = "<leader>tm", group = "Tab Move", icon = { icon = "󰓩 ", color = "purple" } },
+      { lhs = "<leader>t", group = "Tab", icon = { icon = "󰓩 ", color = "purple" } },
+      { lhs = "<leader>e", group = "Explore", icon = { icon = " ", color = "orange" } },
+      { lhs = "<leader>b", group = "Buffer", icon = { icon = " ", color = "red" } },
+      { lhs = "<leader>f", group = "Find", icon = { icon = "󰍉 ", color = "cyan" } },
+      { lhs = "<leader>g", group = "Git", icon = { icon = "󰊢 ", color = "orange" } },
+      { lhs = "<leader>h", group = "Hunk", icon = { icon = "󰦨 ", color = "green" }, mode = { "n", "v" } },
+      { lhs = "<leader>s", group = "Live Server", icon = { icon = " ", color = "green" } },
+      { lhs = "<leader>o", group = "Option", icon = { icon = " ", color = "green" } },
+      { lhs = "<leader>l", group = "LSP", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
+    },
+  },
+  config = function(_, opts)
+    require("which-key").setup(opts)
+    vim.api.nvim_set_hl(0, "WhichKeyBorder", { fg = "#54546D", bg = "#1F1F28" })
+    vim.api.nvim_set_hl(0, "WhichKeyNormal", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "WhichKeyTitle", { link = "Normal" })
+  end,
+}
