@@ -19,7 +19,7 @@ return {
         callback = function()
           vim.cmd("Neogit")
         end,
-        name = "heirline_git",
+        name = "heirline_gitremote",
       },
       provider = function(self)
         return " " .. tostring(self.behind) .. "" .. tostring(self.ahead) .. ""

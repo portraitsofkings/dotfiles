@@ -4,7 +4,7 @@ local onClick = {
   callback = function()
     vim.cmd("Neogit")
   end,
-  name = "heirline_gitremote",
+  name = "heirline_git",
 }
 
 return {
