@@ -1,3 +1,5 @@
+local conditions = require("heirline.conditions")
+
 local mode = require("plugins.heirline.statusline.mode")
 local file = require("plugins.heirline.statusline.file")
 local flags = require("plugins.heirline.statusline.flags")
@@ -15,7 +17,30 @@ local separator = { provider = "%=" }
 local trim = { provider = "%<" }
 
 return {
-  hl = { bg = "bg" },
+  hl = function(self)
+    return { fg = self:getModeColor(), bg = "bg" }
+  end,
+  static = {
+    MODE_COLORS = {
+      n = "red",
+      i = "green",
+      v = "magenta",
+      V = "magenta",
+      ["\22"] = "magenta",
+      c = "orange",
+      s = "purple",
+      S = "purple",
+      ["\19"] = "purple",
+      R = "orange",
+      r = "orange",
+      ["!"] = "red",
+      t = "red",
+    },
+    getModeColor = function(self)
+      local currentMode = conditions.is_active() and vim.fn.mode() or "n"
+      return self.MODE_COLORS[currentMode]
+    end,
+  },
   mode,
   file,
   trim,

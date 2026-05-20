@@ -2,17 +2,13 @@ local function getName(ctx)
   return ctx.MODE_NAMES[ctx.modeFirst]
 end
 
-local function getHighlight(ctx)
-  return ctx.MODE_COLORS[ctx.modeFirst]
-end
-
 return {
   init = function(self)
     self.mode = vim.fn.mode(1)
     self.modeFirst = self.mode:sub(1, 1)
   end,
   hl = function(self)
-    return { bg = getHighlight(self), fg = "bg_dark", bold = true }
+    return { bg = self:getModeColor(), fg = "bg_dark", bold = true }
   end,
   update = {
     "ModeChanged",
@@ -57,21 +53,6 @@ return {
       ["r?"] = "?",
       ["!"] = "!",
       t = "T",
-    },
-    MODE_COLORS = {
-      n = "red",
-      i = "green",
-      v = "magenta",
-      V = "magenta",
-      ["\22"] = "magenta",
-      c = "orange",
-      s = "purple",
-      S = "purple",
-      ["\19"] = "purple",
-      R = "orange",
-      r = "orange",
-      ["!"] = "red",
-      t = "red",
     },
   },
   {
