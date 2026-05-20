@@ -1,7 +1,7 @@
 return {
   init = function(self)
     vim.system({ "git", "rev-list", "--left-right", "--count", "HEAD...@{u}" }, { text = true }, function(response)
-      local ahead, behind = response.stdout:match("(%d+)%s+(%d)")
+      local ahead, behind = response.stdout:match("(%d+)%s+(%d+)")
       self.ahead = tonumber(ahead) or 0
       self.behind = tonumber(behind) or 0
     end)
