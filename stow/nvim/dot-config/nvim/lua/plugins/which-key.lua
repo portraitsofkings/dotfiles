@@ -29,6 +29,7 @@ return {
       separator = "",
     },
     spec = {
+      { lhs = "<leader>m", hidden = true },
       { lhs = "-", icon = { icon = " ", color = "orange" } },
       { lhs = "<leader>?", icon = { icon = " ", color = "blue" } },
       { lhs = "<leader>w", group = "Window", icon = { icon = " ", color = "blue" } },
