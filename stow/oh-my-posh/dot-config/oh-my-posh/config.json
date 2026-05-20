@@ -1,58 +1,78 @@
 {
-    "version": 4,
-    "var": {
-        "Prompt": " "
-    },
-    "palette": {
-        "main": "red",
-        "error": "magenta"
-    },
-    "secondary_prompt": {
-        "background": "transparent",
-        "foreground": "p:main",
-        "template": "{{.Var.Prompt}}"
-    },
-    "transient_prompt": {
-        "background": "transparent",
-        "foreground": "p:main",
-        "template": "{{.Var.Prompt}}"
-    },
-    "blocks": [
+  "version": 4,
+  "var": {
+    "Prompt": " "
+  },
+  "palette": {
+    "main": "red",
+    "error": "magenta"
+  },
+  "secondary_prompt": {
+    "background": "transparent",
+    "foreground": "p:main",
+    "template": "{{.Var.Prompt}}"
+  },
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "p:main",
+    "template": "{{.Var.Prompt}}"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
         {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "type": "path",
-                    "style": "plain",
-                    "foreground": "p:main",
-                    "options": {
-                        "style": "full"
-                    }
-                },
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "foreground": "p:main",
-                    "foreground_templates": [
-                        "{{if gt .Code 0}}p:error{{end}}"
-                    ],
-                    "template": "{{.Var.Prompt}}"
-                }
-            ]
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:main",
+          "options": {
+            "style": "full"
+          }
         },
         {
-            "type": "rprompt",
-            "overflow": "hide",
-            "segments": [
-                {
-                    "type": "git",
-                    "style": "plain",
-                    "options": {
-                        "branch_icon": "󰘬 "
-                    }
-                }
-            ]
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:main",
+          "foreground_templates": [
+            "{{if gt .Code 0}}p:error{{end}}"
+          ],
+          "template": "{{.Var.Prompt}}"
         }
-    ]
+      ]
+    },
+    {
+      "type": "rprompt",
+      "overflow": "hide",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:main",
+          "options": {
+            "branch_icon": "󰘬 "
+          },
+          "template": "{{.HEAD}}"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:main",
+          "options": {
+            "fetch_status": true
+          },
+          "template": "{{if or (gt .Working.Modified 0) (gt .Staging.Modified 0)}}*{{end}}"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:main",
+          "options": {
+            "fetch_status": true
+          },
+          "template": "{{if or (gt .Behind 0) (gt .Ahead 0)}}  {{.Behind}}{{.Ahead}}{{end}}"
+        }
+      ]
+    }
+  ]
 }
