@@ -45,6 +45,7 @@ return {
       { lhs = "<leader>wt", icon = { icon = "󰝜 ", color = "purple" } },
       { lhs = "<leader>tm", group = "Tab Move", icon = { icon = "󰓩 ", color = "purple" } },
       { lhs = "<leader>t", group = "Tab", icon = { icon = "󰓩 ", color = "purple" } },
+      { lhs = "<leader>d", group = "Diagnostic", icon = { icon = "󰿷 ", color = "green" } },
       { lhs = "<leader>e", group = "Explore", icon = { icon = " ", color = "orange" } },
       { lhs = "<leader>b", group = "Buffer", icon = { icon = " ", color = "red" } },
       { lhs = "<leader>f", group = "Find", icon = { icon = "󰍉 ", color = "cyan" } },
