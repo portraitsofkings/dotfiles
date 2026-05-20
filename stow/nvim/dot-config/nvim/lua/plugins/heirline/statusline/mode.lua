@@ -59,7 +59,7 @@ return {
       t = "T",
     },
     MODE_COLORS = {
-      n = "blue",
+      n = "red",
       i = "green",
       v = "magenta",
       V = "magenta",

@@ -15,3 +15,10 @@ bindings = [
 normal = {
   family = "AdwaitaMono Nerd Font Mono"
 }
+
+[colors]
+cursor = {
+  # tokyonight red
+  cursor = "#f7768e"
+}
+

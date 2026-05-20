@@ -1,12 +1,11 @@
 {
     "version": 4,
     "var": {
-        "Prompt": " ",
-        "Prompt_foreground": "blue"
+        "Prompt": " "
     },
     "palette": {
-        "main": "blue",
-        "error": "red"
+        "main": "red",
+        "error": "magenta"
     },
     "secondary_prompt": {
         "background": "transparent",
@@ -26,7 +25,7 @@
                 {
                     "type": "path",
                     "style": "plain",
-                    "foreground": "blue",
+                    "foreground": "p:main",
                     "options": {
                         "style": "full"
                     }
@@ -36,7 +35,7 @@
                     "style": "plain",
                     "foreground": "p:main",
                     "foreground_templates": [
-                        "{{if gt .Code 0}}red{{end}}"
+                        "{{if gt .Code 0}}p:error{{end}}"
                     ],
                     "template": "{{.Var.Prompt}}"
                 }
