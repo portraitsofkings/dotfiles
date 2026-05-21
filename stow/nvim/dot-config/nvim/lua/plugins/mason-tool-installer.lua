@@ -4,6 +4,6 @@ return {
     { "mason-org/mason.nvim", config = true },
   },
   opts = {
-    ensure_installed = { "stylua" },
+    ensure_installed = { "stylua", "prettier", "prettierd" },
   },
 }
