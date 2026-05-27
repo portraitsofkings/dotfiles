@@ -24,6 +24,16 @@ return {
     },
   },
   {
+    lhs = "<leader>m",
+    rhs = function()
+      require("treesj").toggle()
+    end,
+    mode = "n",
+    opts = {
+      desc = "Core: Toggle Code Block Split/Join",
+    },
+  },
+  {
     lhs = "<leader>?",
     rhs = function()
       require("which-key").show()
