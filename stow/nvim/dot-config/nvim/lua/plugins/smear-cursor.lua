@@ -7,6 +7,5 @@ return {
     -- Fix unreadable search in noice.nvim command line
     never_draw_over_target = true,
     hide_target_hack = true,
-    cursor_color = "#f7768e",
   },
 }
