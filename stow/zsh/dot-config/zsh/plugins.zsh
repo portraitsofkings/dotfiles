@@ -1,3 +1,6 @@
+# fzf completion menu
+zinit light Aloxaf/fzf-tab
+
 # Pre-made completion definitions
 zinit light zsh-users/zsh-completions
 
@@ -8,9 +11,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 # Show only completion suggestions
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
-
-# fzf completion menu
-zinit light Aloxaf/fzf-tab
 
 # ~~~ nvm ~~~
 # Where to install nvm
