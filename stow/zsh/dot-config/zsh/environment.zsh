@@ -1,11 +1,10 @@
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
-# Use neovim as man pager
+export VISUAL="nvim"
+export EDITOR="nvim"
+
+export PAGER="bat"
 export MANPAGER="nvim +Man!"
-
-# Where to write history file
-HISTFILE=~/.zsh_history
-# How many commands to keep in memory
-HISTSIZE=10000
-# How many commands to write to the history file
-SAVEHIST=$HISTSIZE
