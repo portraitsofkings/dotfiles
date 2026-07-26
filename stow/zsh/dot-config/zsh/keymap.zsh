@@ -1,6 +1,16 @@
 # Use emacs keymap layout
 bindkey -e
 
+# Alt+Backspace stops deleting at non-alphanun
+# https://unix.stackexchange.com/a/319854
+backward-kill-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-kill-word
+    zle -f kill
+}
+zle -N backward-kill-dir
+bindkey '^[^?' backward-kill-dir
+
 # Expand ! commands
 bindkey ' ' magic-space
 
