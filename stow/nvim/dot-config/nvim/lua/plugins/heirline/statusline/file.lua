@@ -8,7 +8,28 @@ return {
   },
   {
     provider = function(self)
-      return self.tail ~= "" and self.tail or "[No Name]"
+      local hasName = self.tail ~= ""
+      local bufType = vim.bo.buftype
+      if hasName then
+        if bufType == "help" then
+          return self.tail .. " [Help]"
+        end
+
+        return self.tail
+      else
+        local windowType = vim.fn.getcmdwintype()
+        if windowType == ":" then
+          return "[Command Line]"
+        elseif windowType == "/" or windowType == "?" then
+          return "[Search History]"
+        end
+
+        if bufType == "quickfix" then
+          return "[Quickfix]"
+        end
+
+        return "[No Name]"
+      end
     end,
   },
 }
