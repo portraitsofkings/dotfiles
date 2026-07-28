@@ -16,7 +16,11 @@ return {
       local hasName = self.tail ~= ""
 
       if self.filetype == "oil" then
-        return "./" .. self.oildir_tail
+        if vim.fn.isabsolutepath(self.oildir_tail) == 1 then
+          return self.oildir
+        else
+          return "./" .. self.oildir_tail
+        end
       end
 
       if hasName then
