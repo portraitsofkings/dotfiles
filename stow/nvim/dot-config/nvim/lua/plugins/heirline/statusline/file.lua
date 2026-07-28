@@ -2,6 +2,11 @@ return {
   init = function(self)
     self.fullpath = vim.api.nvim_buf_get_name(0)
     self.tail = vim.fn.fnamemodify(self.fullpath, ":t")
+    self.buftype = vim.bo.buftype
+    self.filetype = vim.bo.filetype
+    self.wintype = vim.fn.getcmdwintype()
+    self.oildir = require("oil").get_current_dir(0)
+    self.oildir_tail = vim.fn.fnamemodify(self.oildir, ":.")
   end,
   {
     provider = " ",
@@ -9,22 +14,25 @@ return {
   {
     provider = function(self)
       local hasName = self.tail ~= ""
-      local bufType = vim.bo.buftype
+
+      if self.filetype == "oil" then
+        return "./" .. self.oildir_tail
+      end
+
       if hasName then
-        if bufType == "help" then
+        if self.buftype == "help" then
           return self.tail .. " [Help]"
         end
 
         return self.tail
       else
-        local windowType = vim.fn.getcmdwintype()
-        if windowType == ":" then
+        if self.wintype == ":" then
           return "[Command Line]"
-        elseif windowType == "/" or windowType == "?" then
+        elseif self.wintype == "/" or self.wintype == "?" then
           return "[Search History]"
         end
 
-        if bufType == "quickfix" then
+        if self.buftype == "quickfix" then
           return "[Quickfix]"
         end
 
