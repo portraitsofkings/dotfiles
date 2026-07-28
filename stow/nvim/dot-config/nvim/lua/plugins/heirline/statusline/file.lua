@@ -4,16 +4,11 @@ return {
     self.tail = vim.fn.fnamemodify(self.fullpath, ":t")
   end,
   {
-    condition = function(self)
-      return self.tail ~= ""
+    provider = " ",
+  },
+  {
+    provider = function(self)
+      return self.tail ~= "" and self.tail or "[No Name]"
     end,
-    {
-      provider = " ",
-    },
-    {
-      provider = function(self)
-        return self.tail
-      end,
-    },
   },
 }
