@@ -37,9 +37,7 @@ return {
   },
   {
     lhs = "<C-h>",
-    rhs = function()
-      smart_splits().move_cursor_left()
-    end,
+    rhs = "<C-w>h",
     mode = "n",
     opts = {
       desc = "Window: Move Cursor Left",
@@ -47,9 +45,7 @@ return {
   },
   {
     lhs = "<C-j>",
-    rhs = function()
-      smart_splits().move_cursor_down()
-    end,
+    rhs = "<C-w>j",
     mode = "n",
     opts = {
       desc = "Window: Move Cursor Down",
@@ -57,9 +53,7 @@ return {
   },
   {
     lhs = "<C-k>",
-    rhs = function()
-      smart_splits().move_cursor_up()
-    end,
+    rhs = "<C-w>k",
     mode = "n",
     opts = {
       desc = "Window: Move Cursor Up",
@@ -67,9 +61,7 @@ return {
   },
   {
     lhs = "<C-l>",
-    rhs = function()
-      smart_splits().move_cursor_right()
-    end,
+    rhs = "<C-w>l",
     mode = "n",
     opts = {
       desc = "Window: Move Cursor Right",
